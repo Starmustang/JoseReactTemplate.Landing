@@ -68,6 +68,7 @@ const Hero = () => {
         <Box id="recorrido" sx={{ mt: { xs: 6, md: 8 }, scrollMarginTop: '96px' }}>
           <VideoFrame
             src="/videos/brag.mp4"
+            webmSrc="/videos/brag.webm"
             poster="/videos/brag.jpg"
             label={t('hero.videoCaption')}
             autoPlay
