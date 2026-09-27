@@ -1,0 +1,418 @@
+export const resources = {
+  es: {
+    translation: {
+      meta: {
+        title: 'Breton Otaño — Todo el consultorio. Un solo sistema.',
+        description:
+          'Sistema de gestión para clínicas dentales: pacientes, doctores, citas, tratamientos y un odontograma interactivo, con bot de Telegram para que el paciente agende solo.',
+      },
+      nav: {
+        product: 'El sistema',
+        odontogram: 'Odontograma',
+        schedule: 'Agenda',
+        workflow: 'Flujo de citas',
+        stack: 'Arquitectura',
+        cta: 'Ver el recorrido',
+        menu: 'Menú',
+      },
+      hero: {
+        eyebrow: 'Sistema de gestión para clínicas dentales',
+        title: 'Todo el consultorio.\nUn solo sistema.',
+        body: 'Pacientes, doctores, clínicas, citas y tratamientos en un mismo lugar — y un odontograma que se pinta superficie por superficie. Del otro lado, un bot de Telegram que reconoce al paciente por su teléfono y lo guía hasta agendar su propia cita.',
+        primary: 'Ver el recorrido',
+        secondary: 'Cómo agenda el paciente',
+        videoCaption: 'Recorrido general · 20 s',
+        specTitle: 'Lo que hay dentro',
+        specs: [
+          { value: '32', label: 'dientes en FDI' },
+          { value: '5', label: 'superficies pintables' },
+          { value: '12', label: 'estados clínicos' },
+          { value: '6', label: 'pasos en el bot' },
+        ],
+      },
+      halves: {
+        eyebrow: 'Dos mitades, un solo sistema',
+        title: 'El consultorio por un lado. El paciente por el otro.',
+        body: 'Son dos productos con el mismo abrigo: la consola donde trabaja la clínica y el bot donde el paciente se atiende solo. Y son el mismo sistema — la cita que alguien agenda en Telegram aparece en la agenda del doctor.',
+        clinicTitle: 'La consola de la clínica',
+        clinicBody:
+          'Todo lo que el mostrador y los doctores necesitan, con permisos por acción y sin datos que se pierdan.',
+        clinicPoints: [
+          'Agenda semanal por estado, no por hoja de cálculo',
+          'Odontograma con historial de tratamientos por diente',
+          'Horarios y días de excepción por clínica y por doctor',
+          'Usuarios, roles y permisos granulares',
+        ],
+        patientTitle: 'El bot del paciente',
+        patientBody:
+          'Sin llamadas y sin instalar nada: el paciente ya tiene Telegram. El bot lo reconoce por su número y le ofrece solo lo que existe.',
+        patientPoints: [
+          'Agendar, ver, reagendar y cancelar por sí mismo',
+          'Se identifica compartiendo su teléfono',
+          'Solo ve clínicas, doctores y horas reales',
+          'Recordatorio el día antes y una hora antes',
+        ],
+        consoleTitle: 'Navegación del sistema',
+        consoleNote: 'Cada entrada del menú se filtra por los permisos del usuario.',
+        telegramNote: 'Texto literal del bot, tal como se envía en producción.',
+        telegramWelcome: '¡Bienvenido! Comparta su número de teléfono para poder identificarlo.',
+        telegramShare: 'Compartir mi número de teléfono',
+        telegramBack: '¡Bienvenido de nuevo, María!',
+        telegramMenu: ['Agendar Cita', 'Ver Citas', 'Reagendar Cita', 'Cancelar Cita'],
+        telegramConfirmed: '✅ Cita agendada exitosamente para el 2026-09-24 a las 10:00 AM.',
+        telegramTag: 'por Telegram',
+      },
+      odontogram: {
+        eyebrow: 'Odontograma',
+        title: 'Cada diente. Cada superficie.',
+        body: 'El diagrama FDI completo — 32 dientes — donde cada superficie guarda su propio estado clínico. Doce estados, cinco superficies, y un historial de tratamientos por diente que no se puede sobrescribir hacia atrás.',
+        chartTitle: 'Diagrama dental (FDI)',
+        chartHint: '32 dientes · 5 superficies',
+        demoTitle: 'Píntelo usted mismo',
+        demoBody:
+          'Elija un estado y haga clic en una superficie del diente. Es la misma interacción del producto, sin el resto del consultorio.',
+        demoTooth: 'Diente',
+        selectedStatus: 'Estado seleccionado',
+        surfacesLabel: 'Cinco superficies',
+        paletteLabel: 'Doce estados clínicos',
+        paintHint: 'Haga clic en una superficie',
+        clear: 'Limpiar',
+        regressionTitle: 'Un diente no retrocede',
+        regressionBody:
+          'Cada tipo de tratamiento trae un estado resultante y una prioridad. Un tratamiento de prioridad menor no puede pisar uno de prioridad mayor: la corona no se borra porque después se haga una limpieza.',
+        priorityLabel: 'Prioridad',
+      },
+      schedule: {
+        eyebrow: 'Citas',
+        title: 'Agenda sin choques.',
+        body: 'Vista semanal con los bloques coloreados por estado. Antes de ofrecer una hora, el servicio de citas ya verificó cuatro reglas — y la cita que llega del bot entra en vivo, sin recargar la pantalla.',
+        rulesTitle: 'Antes de ofrecer una hora',
+        rules: [
+          'horarios de clínica',
+          'horarios del doctor',
+          'días de excepción',
+          'sin solapamientos',
+        ],
+        legendTitle: 'Estados de una cita',
+        realtime: 'SignalR empuja AppointmentsChanged a todos los navegadores abiertos.',
+        slots: 'Franjas de 30 minutos · 14 días visibles desde el bot',
+      },
+      workflow: {
+        eyebrow: 'Flujo de citas',
+        title: 'Una cita. Sin una sola llamada.',
+        body: 'Seis preguntas ordenadas y nada más. El bot no ofrece horarios que no existen, y en cada paso el paciente puede volver atrás.',
+        stepsTitle: 'Los seis pasos',
+        steps: ['Clínica', 'Tratamiento', 'Doctor', 'Fecha', 'Hora', 'Motivo'],
+        videoCaption: 'Flujo de citas explicado · 29 s',
+        notes: [
+          'El paciente comparte su teléfono una sola vez; el bot lo reconoce desde entonces.',
+          'Si no existe, se registra en el momento con nombre y apellido.',
+          'Los doctores que aparecen son los que tienen la especialidad del tratamiento elegido.',
+          'Al confirmar, la cita nace en estado Pendiente y marcada como venida de Telegram.',
+        ],
+        remindersTitle: 'Recordatorios',
+        reminders: [
+          { name: 'Recordatorio', when: 'el día anterior, 9:00' },
+          { name: 'Última hora', when: 'una hora antes' },
+        ],
+      },
+      modules: {
+        eyebrow: 'Los módulos',
+        title: 'Lo que se administra desde adentro',
+        body: 'Cada módulo sigue el mismo patrón — tabla, modal, validación y permisos — así que la clínica aprende uno y ya sabe usar los demás.',
+        items: [
+          {
+            title: 'Citas',
+            body: 'Vista semanal con bloques por estado, "Completar cita" y aviso en vivo por SignalR.',
+          },
+          {
+            title: 'Odontogramas',
+            body: '32 dientes en FDI, cinco superficies pintables y doce estados clínicos con historial por diente.',
+          },
+          {
+            title: 'Pacientes',
+            body: 'Ficha con alergias, contacto, cédula o pasaporte, citas, tratamientos y odontogramas.',
+          },
+          {
+            title: 'Doctores',
+            body: 'Especialidades, horarios propios y días de excepción por doctor.',
+          },
+          {
+            title: 'Clínicas',
+            body: 'Horarios de atención y días de excepción por clínica; una o varias sedes.',
+          },
+          {
+            title: 'Tratamientos',
+            body: 'Tratamiento, tipo, costo y duración estimada que fija el fin de la cita.',
+          },
+          {
+            title: 'Especialidades',
+            body: 'Agrupan tipos de tratamiento y deciden qué doctores aparecen en cada caso.',
+          },
+          {
+            title: 'Broadcast',
+            body: 'Envío de mensajes a los pacientes vinculados al bot.',
+          },
+          {
+            title: 'Usuarios, roles y permisos',
+            body: 'Permisos granulares por acción; los roles los agrupan y el menú se filtra por ellos.',
+          },
+        ],
+      },
+      stack: {
+        eyebrow: 'Arquitectura',
+        title: 'Construido para durar, no para una demo',
+        body: 'Un backend .NET 9 con permisos por endpoint y borrado lógico, un frontend Next.js 15 con caché por consulta, y todo corriendo en Docker con respaldos automáticos.',
+        guaranteesTitle: 'Decisiones que se notan cuando algo sale mal',
+        rows: [
+          { label: 'Backend', value: '.NET 9 · ASP.NET Core · EF Core' },
+          { label: 'Base de datos', value: 'MySQL 8.0 (Pomelo)' },
+          { label: 'Frontend', value: 'Next.js 15 · React 19 · MUI 6' },
+          { label: 'Estado', value: 'TanStack Query 5 · Zustand 5' },
+          { label: 'Sesión', value: 'NextAuth 4 · JWT access + refresh' },
+          { label: 'Tiempo real', value: 'SignalR (AppointmentsChanged)' },
+          { label: 'Bot', value: 'Telegram (polling, sin webhook)' },
+          { label: 'Operación', value: 'Docker Compose · Nginx · respaldos diarios' },
+          { label: 'Zona horaria', value: 'America/Halifax' },
+        ],
+        guarantees: [
+          {
+            title: 'Borrado lógico, nunca físico',
+            body: 'Toda entidad hereda Deleted e IsActive; el DataContext convierte cada DELETE en un UPDATE. Nada desaparece de la base.',
+          },
+          {
+            title: 'Auditoría automática',
+            body: 'CreatedDate, LastModifiedDate, CreatedBy y LastModifiedBy se escriben solos, en la zona horaria de la clínica.',
+          },
+          {
+            title: 'Permisos, no solo roles',
+            body: 'Cada endpoint exige un permiso concreto. Los permisos con alcance propio resuelven el dueño desde el token, no desde la URL.',
+          },
+          {
+            title: 'Sesiones que no se pueden robar en silencio',
+            body: 'Familias de refresh tokens de un solo uso: reutilizar un token ya consumido condena la familia entera y obliga a un nuevo inicio de sesión.',
+          },
+        ],
+      },
+      c2a: {
+        title: '¿Lo quiere ver con los datos de su consultorio?',
+        body: 'El recorrido completo está arriba: el sistema general y, por separado, el flujo de citas paso a paso.',
+        primary: 'Ver el recorrido general',
+        secondary: 'Ver el flujo de citas',
+      },
+      footer: {
+        tagline: 'Todo el consultorio. Un solo sistema.',
+        builtWith: 'Breton Otaño · Sistema de gestión para clínicas dentales',
+        rights: 'Hecho para la clínica Breton Otaño.',
+      },
+    },
+  },
+  en: {
+    translation: {
+      meta: {
+        title: 'Breton Otaño — The whole practice. One system.',
+        description:
+          'Dental clinic management system: patients, doctors, appointments, treatments and an interactive odontogram, with a Telegram bot that lets patients book on their own.',
+      },
+      nav: {
+        product: 'The system',
+        odontogram: 'Odontogram',
+        schedule: 'Schedule',
+        workflow: 'Booking flow',
+        stack: 'Architecture',
+        cta: 'Watch the walkthrough',
+        menu: 'Menu',
+      },
+      hero: {
+        eyebrow: 'Dental clinic management system',
+        title: 'The whole practice.\nOne system.',
+        body: 'Patients, doctors, clinics, appointments and treatments in one place — plus an odontogram you paint surface by surface. On the other side, a Telegram bot that recognises the patient by phone number and walks them to a booking of their own.',
+        primary: 'Watch the walkthrough',
+        secondary: 'How a patient books',
+        videoCaption: 'Overall walkthrough · 20s',
+        specTitle: 'What is inside',
+        specs: [
+          { value: '32', label: 'FDI teeth' },
+          { value: '5', label: 'paintable surfaces' },
+          { value: '12', label: 'clinical statuses' },
+          { value: '6', label: 'bot steps' },
+        ],
+      },
+      halves: {
+        eyebrow: 'Two halves, one system',
+        title: 'The practice on one side. The patient on the other.',
+        body: 'Two products wearing one coat: the console the clinic works in, and the bot the patient uses alone. They are the same system — the appointment someone books in Telegram shows up on the dentist\u2019s calendar.',
+        clinicTitle: 'The clinic console',
+        clinicBody:
+          'Everything the front desk and the doctors need, with per-action permissions and nothing quietly lost.',
+        clinicPoints: [
+          'A weekly calendar by status, not a spreadsheet',
+          'Odontogram with a treatment history per tooth',
+          'Working hours and exception days per clinic and per doctor',
+          'Users, roles and granular permissions',
+        ],
+        patientTitle: 'The patient bot',
+        patientBody:
+          'No phone calls and nothing to install: the patient already has Telegram. The bot recognises them by phone number and offers only what actually exists.',
+        patientPoints: [
+          'Book, view, reschedule and cancel on their own',
+          'Identified by sharing their phone number',
+          'Sees only real clinics, doctors and times',
+          'A reminder the day before and one hour before',
+        ],
+        consoleTitle: 'System navigation',
+        consoleNote: 'Every menu entry is filtered by the user\u2019s permissions.',
+        telegramNote: 'Verbatim bot copy, exactly as sent in production.',
+        telegramWelcome: '¡Bienvenido! Comparta su número de teléfono para poder identificarlo.',
+        telegramShare: 'Compartir mi número de teléfono',
+        telegramBack: '¡Bienvenido de nuevo, María!',
+        telegramMenu: ['Agendar Cita', 'Ver Citas', 'Reagendar Cita', 'Cancelar Cita'],
+        telegramConfirmed: '✅ Cita agendada exitosamente para el 2026-09-24 a las 10:00 AM.',
+        telegramTag: 'por Telegram',
+      },
+      odontogram: {
+        eyebrow: 'Odontogram',
+        title: 'Every tooth. Every surface.',
+        body: 'The full FDI chart — 32 teeth — where each surface carries its own clinical status. Twelve statuses, five surfaces, and a per-tooth treatment history that cannot be overwritten backwards.',
+        chartTitle: 'Dental chart (FDI)',
+        chartHint: '32 teeth · 5 surfaces',
+        demoTitle: 'Paint it yourself',
+        demoBody:
+          'Pick a status and click a surface on the tooth. It is the product\u2019s own interaction, without the rest of the practice.',
+        demoTooth: 'Tooth',
+        selectedStatus: 'Selected status',
+        surfacesLabel: 'Five surfaces',
+        paletteLabel: 'Twelve clinical statuses',
+        paintHint: 'Click a surface',
+        clear: 'Clear',
+        regressionTitle: 'A tooth does not go backwards',
+        regressionBody:
+          'Every treatment type carries a resulting status and a priority. A lower-priority treatment cannot overwrite a higher-priority one: the crown is not erased because a cleaning happened afterwards.',
+        priorityLabel: 'Priority',
+      },
+      schedule: {
+        eyebrow: 'Appointments',
+        title: 'A schedule that never collides.',
+        body: 'A weekly view with blocks coloured by status. Before a time is ever offered, the appointment service has already checked four rules — and the booking that arrives from the bot lands live, with no page reload.',
+        rulesTitle: 'Before a time is offered',
+        rules: [
+          'clinic working hours',
+          'doctor working hours',
+          'exception days',
+          'no overlaps',
+        ],
+        legendTitle: 'Appointment statuses',
+        realtime: 'SignalR pushes AppointmentsChanged to every open browser.',
+        slots: '30-minute slots · 14 days shown from the bot',
+      },
+      workflow: {
+        eyebrow: 'Booking flow',
+        title: 'One appointment. Not a single phone call.',
+        body: 'Six ordered questions and nothing else. The bot never offers a time that does not exist, and every step can be walked back.',
+        stepsTitle: 'The six steps',
+        steps: ['Clinic', 'Treatment', 'Doctor', 'Date', 'Time', 'Reason'],
+        videoCaption: 'Booking flow explained · 29s',
+        notes: [
+          'The patient shares their phone once; the bot knows them from then on.',
+          'If they are not on file, they are registered on the spot with first and last name.',
+          'The doctors offered are the ones holding the speciality of the chosen treatment.',
+          'On confirmation the appointment is born Pendiente and tagged as coming from Telegram.',
+        ],
+        remindersTitle: 'Reminders',
+        reminders: [
+          { name: 'Recordatorio', when: 'the day before, 9:00' },
+          { name: 'Última hora', when: 'one hour before' },
+        ],
+      },
+      modules: {
+        eyebrow: 'Modules',
+        title: 'What gets managed inside',
+        body: 'Every module follows the same pattern — table, modal, validation, permissions — so the clinic learns one and already knows the rest.',
+        items: [
+          {
+            title: 'Appointments',
+            body: 'A weekly view with status-coloured blocks, "Completar cita", and live updates over SignalR.',
+          },
+          {
+            title: 'Odontograms',
+            body: '32 FDI teeth, five paintable surfaces and twelve clinical statuses with a per-tooth history.',
+          },
+          {
+            title: 'Patients',
+            body: 'Allergies, contact details, ID or passport, appointments, treatments and odontograms on one record.',
+          },
+          {
+            title: 'Doctors',
+            body: 'Specialities, their own working hours and exception days per doctor.',
+          },
+          {
+            title: 'Clinics',
+            body: 'Opening hours and exception days per clinic; one location or several.',
+          },
+          {
+            title: 'Treatments',
+            body: 'Treatment, type, cost and the estimated duration that sets when the appointment ends.',
+          },
+          {
+            title: 'Specialities',
+            body: 'They group treatment types and decide which doctors appear for a given case.',
+          },
+          {
+            title: 'Broadcast',
+            body: 'Message delivery to the patients linked to the bot.',
+          },
+          {
+            title: 'Users, roles and permissions',
+            body: 'Granular per-action permissions; roles bundle them and the menu is filtered by them.',
+          },
+        ],
+      },
+      stack: {
+        eyebrow: 'Architecture',
+        title: 'Built to last, not for a demo',
+        body: 'A .NET 9 backend with per-endpoint permissions and soft deletes, a Next.js 15 frontend with per-query caching, all of it running on Docker with automated backups.',
+        guaranteesTitle: 'Decisions you notice when something goes wrong',
+        rows: [
+          { label: 'Backend', value: '.NET 9 · ASP.NET Core · EF Core' },
+          { label: 'Database', value: 'MySQL 8.0 (Pomelo)' },
+          { label: 'Frontend', value: 'Next.js 15 · React 19 · MUI 6' },
+          { label: 'State', value: 'TanStack Query 5 · Zustand 5' },
+          { label: 'Session', value: 'NextAuth 4 · JWT access + refresh' },
+          { label: 'Real time', value: 'SignalR (AppointmentsChanged)' },
+          { label: 'Bot', value: 'Telegram (polling, no webhook)' },
+          { label: 'Operations', value: 'Docker Compose · Nginx · daily backups' },
+          { label: 'Time zone', value: 'America/Halifax' },
+        ],
+        guarantees: [
+          {
+            title: 'Logical deletes, never physical',
+            body: 'Every entity inherits Deleted and IsActive; the DataContext turns each DELETE into an UPDATE. Nothing disappears from the database.',
+          },
+          {
+            title: 'Audit trail for free',
+            body: 'CreatedDate, LastModifiedDate, CreatedBy and LastModifiedBy write themselves, in the clinic\u2019s time zone.',
+          },
+          {
+            title: 'Permissions, not just roles',
+            body: 'Every endpoint demands a specific permission. Own-scoped permissions resolve the owner from the token, never from the URL.',
+          },
+          {
+            title: 'Sessions that cannot be stolen quietly',
+            body: 'Single-use refresh-token families: presenting an already-consumed token condemns the whole family and forces a fresh sign-in.',
+          },
+        ],
+      },
+      c2a: {
+        title: 'Want to see it with your own clinic\u2019s data?',
+        body: 'The full walkthrough is above: the system overall, and the booking flow step by step.',
+        primary: 'Watch the overall walkthrough',
+        secondary: 'Watch the booking flow',
+      },
+      footer: {
+        tagline: 'The whole practice. One system.',
+        builtWith: 'Breton Otaño · Dental clinic management system',
+        rights: 'Built for the Breton Otaño clinic.',
+      },
+    },
+  },
+};

@@ -1,0 +1,42 @@
+:root {
+  --accent: #3d9cb0;
+  --surface: #26323f;
+  --canvas: #1c2733;
+}
+
+html,
+body {
+  background-color: var(--canvas);
+}
+
+/* The landing page never scrolls sideways; wide artefacts (the FDI chart) own
+   their own scroll container instead. */
+body {
+  overflow-x: hidden;
+}
+
+section {
+  scroll-margin-top: 96px;
+}
+
+/* Surface swatch used by the interactive odontogram demo. */
+.surface-cell {
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.surface-cell:hover {
+  border-color: var(--accent) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
