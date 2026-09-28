@@ -12,7 +12,7 @@ export const useNavItems = (): NavItem[] => {
     { label: t('nav.odontogram'), href: '#odontograma' },
     { label: t('nav.schedule'), href: '#agenda' },
     { label: t('nav.workflow'), href: '#flujo' },
-    { label: t('nav.stack'), href: '#arquitectura' },
+    { label: t('nav.pricing'), href: '#precios' },
   ];
 };
 

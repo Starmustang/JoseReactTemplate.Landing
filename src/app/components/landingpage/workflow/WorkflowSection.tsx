@@ -102,9 +102,10 @@ const WorkflowSection = () => {
           <AnimationFadeIn>
             <VideoFrame
               src="/videos/workflow.mp4"
+              webmSrc="/videos/workflow.webm"
               poster="/videos/workflow.jpg"
               label={t('workflow.videoCaption')}
-              controls
+              autoPlay
             />
           </AnimationFadeIn>
           <Typography

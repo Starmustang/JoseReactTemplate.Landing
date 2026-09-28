@@ -26,7 +26,7 @@ const MobileSidebar = ({ onNavigate }: { onNavigate: () => void }) => {
           mb: 3,
         }}
       >
-        <BrandMark size={30} showWordmark={false} />
+        <BrandMark />
         <IconButton onClick={onNavigate} aria-label={t('nav.menu')} size="small">
           <IconX size={18} />
         </IconButton>
