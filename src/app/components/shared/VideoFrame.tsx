@@ -2,8 +2,10 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import { useInView } from 'react-intersection-observer';
+import { assetPath } from '@/utils/assetPath';
 
 type Props = {
+  /** MP4 file as written under /public; the deployment base path is applied here. */
   src: string;
   /** Optional VP9 sibling; browsers that decode it pick it before the MP4. */
   webmSrc?: string;
@@ -71,7 +73,7 @@ const VideoFrame = ({
         {inView ? (
           <Box
             component="video"
-            poster={poster}
+            poster={assetPath(poster)}
             aria-label={label}
             autoPlay={autoPlay}
             controls={controls}
@@ -81,13 +83,13 @@ const VideoFrame = ({
             preload={autoPlay ? 'auto' : 'metadata'}
             sx={mediaSx}
           >
-            {webmSrc && <source src={webmSrc} type="video/webm" />}
-            <source src={src} type="video/mp4" />
+            {webmSrc && <source src={assetPath(webmSrc)} type="video/webm" />}
+            <source src={assetPath(src)} type="video/mp4" />
           </Box>
         ) : (
           <Box
             component="img"
-            src={poster}
+            src={assetPath(poster)}
             alt={label}
             decoding="async"
             sx={{ ...mediaSx, objectFit: 'cover' }}
