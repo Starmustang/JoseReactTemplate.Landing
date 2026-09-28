@@ -2,7 +2,7 @@ export const resources = {
   es: {
     translation: {
       meta: {
-        title: 'Breton Otaño — Todo el consultorio. Un solo sistema.',
+        title: 'N. Florentino software — Todo el consultorio. Un solo sistema.',
         description:
           'Sistema de gestión para clínicas dentales: pacientes, doctores, citas, tratamientos y un odontograma interactivo, con bot de Telegram para que el paciente agende solo.',
       },
@@ -11,7 +11,7 @@ export const resources = {
         odontogram: 'Odontograma',
         schedule: 'Agenda',
         workflow: 'Flujo de citas',
-        stack: 'Arquitectura',
+        pricing: 'Precios',
         cta: 'Ver el recorrido',
         menu: 'Menú',
       },
@@ -159,40 +159,22 @@ export const resources = {
           },
         ],
       },
-      stack: {
-        eyebrow: 'Arquitectura',
-        title: 'Construido para durar, no para una demo',
-        body: 'Un backend .NET 9 con permisos por endpoint y borrado lógico, un frontend Next.js 15 con caché por consulta, y todo corriendo en Docker con respaldos automáticos.',
-        guaranteesTitle: 'Decisiones que se notan cuando algo sale mal',
-        rows: [
-          { label: 'Backend', value: '.NET 9 · ASP.NET Core · EF Core' },
-          { label: 'Base de datos', value: 'MySQL 8.0 (Pomelo)' },
-          { label: 'Frontend', value: 'Next.js 15 · React 19 · MUI 6' },
-          { label: 'Estado', value: 'TanStack Query 5 · Zustand 5' },
-          { label: 'Sesión', value: 'NextAuth 4 · JWT access + refresh' },
-          { label: 'Tiempo real', value: 'SignalR (AppointmentsChanged)' },
-          { label: 'Bot', value: 'Telegram (polling, sin webhook)' },
-          { label: 'Operación', value: 'Docker Compose · Nginx · respaldos diarios' },
-          { label: 'Zona horaria', value: 'America/Halifax' },
+      pricing: {
+        eyebrow: 'Precios',
+        title: 'Precio a la medida de su consultorio',
+        body: 'Sin planes cerrados ni licencias por usuario: se cotiza según las clínicas, los doctores y los módulos que necesite.',
+        planTitle: 'Sistema completo',
+        planBody: 'Todos los módulos, el bot de Telegram y la instalación en su servidor.',
+        contactSales: 'Contactar ventas',
+        priceNote: 'Sin tarifa de lista: cada consultorio se cotiza aparte.',
+        features: [
+          'Pacientes, doctores, clínicas, citas y tratamientos',
+          'Odontograma interactivo con historial por diente',
+          'Bot de Telegram para que el paciente agende solo',
+          'Usuarios, roles y permisos por acción',
+          'Instalación en su servidor, con respaldos diarios',
         ],
-        guarantees: [
-          {
-            title: 'Borrado lógico, nunca físico',
-            body: 'Toda entidad hereda Deleted e IsActive; el DataContext convierte cada DELETE en un UPDATE. Nada desaparece de la base.',
-          },
-          {
-            title: 'Auditoría automática',
-            body: 'CreatedDate, LastModifiedDate, CreatedBy y LastModifiedBy se escriben solos, en la zona horaria de la clínica.',
-          },
-          {
-            title: 'Permisos, no solo roles',
-            body: 'Cada endpoint exige un permiso concreto. Los permisos con alcance propio resuelven el dueño desde el token, no desde la URL.',
-          },
-          {
-            title: 'Sesiones que no se pueden robar en silencio',
-            body: 'Familias de refresh tokens de un solo uso: reutilizar un token ya consumido condena la familia entera y obliga a un nuevo inicio de sesión.',
-          },
-        ],
+        ctaNote: 'La cotización depende de las clínicas, los doctores y los módulos.',
       },
       c2a: {
         title: '¿Lo quiere ver con los datos de su consultorio?',
@@ -202,15 +184,15 @@ export const resources = {
       },
       footer: {
         tagline: 'Todo el consultorio. Un solo sistema.',
-        builtWith: 'Breton Otaño · Sistema de gestión para clínicas dentales',
-        rights: 'Hecho para la clínica Breton Otaño.',
+        builtWith: 'N. Florentino software · Sistema de gestión para clínicas dentales',
+        rights: 'N. Florentino software · Todos los derechos reservados.',
       },
     },
   },
   en: {
     translation: {
       meta: {
-        title: 'Breton Otaño — The whole practice. One system.',
+        title: 'N. Florentino software — The whole practice. One system.',
         description:
           'Dental clinic management system: patients, doctors, appointments, treatments and an interactive odontogram, with a Telegram bot that lets patients book on their own.',
       },
@@ -219,7 +201,7 @@ export const resources = {
         odontogram: 'Odontogram',
         schedule: 'Schedule',
         workflow: 'Booking flow',
-        stack: 'Architecture',
+        pricing: 'Pricing',
         cta: 'Watch the walkthrough',
         menu: 'Menu',
       },
@@ -367,40 +349,22 @@ export const resources = {
           },
         ],
       },
-      stack: {
-        eyebrow: 'Architecture',
-        title: 'Built to last, not for a demo',
-        body: 'A .NET 9 backend with per-endpoint permissions and soft deletes, a Next.js 15 frontend with per-query caching, all of it running on Docker with automated backups.',
-        guaranteesTitle: 'Decisions you notice when something goes wrong',
-        rows: [
-          { label: 'Backend', value: '.NET 9 · ASP.NET Core · EF Core' },
-          { label: 'Database', value: 'MySQL 8.0 (Pomelo)' },
-          { label: 'Frontend', value: 'Next.js 15 · React 19 · MUI 6' },
-          { label: 'State', value: 'TanStack Query 5 · Zustand 5' },
-          { label: 'Session', value: 'NextAuth 4 · JWT access + refresh' },
-          { label: 'Real time', value: 'SignalR (AppointmentsChanged)' },
-          { label: 'Bot', value: 'Telegram (polling, no webhook)' },
-          { label: 'Operations', value: 'Docker Compose · Nginx · daily backups' },
-          { label: 'Time zone', value: 'America/Halifax' },
+      pricing: {
+        eyebrow: 'Pricing',
+        title: 'A price shaped to your practice',
+        body: 'No rigid tiers and no per-user licences: the quote follows the clinics, the doctors and the modules you actually need.',
+        planTitle: 'The whole system',
+        planBody: 'Every module, the Telegram bot, and the install on your own server.',
+        contactSales: 'Contact sales',
+        priceNote: 'No list price: every practice is quoted on its own.',
+        features: [
+          'Patients, doctors, clinics, appointments and treatments',
+          'Interactive odontogram with a per-tooth history',
+          'Telegram bot so patients book on their own',
+          'Users, roles and per-action permissions',
+          'Installed on your own server, with daily backups',
         ],
-        guarantees: [
-          {
-            title: 'Logical deletes, never physical',
-            body: 'Every entity inherits Deleted and IsActive; the DataContext turns each DELETE into an UPDATE. Nothing disappears from the database.',
-          },
-          {
-            title: 'Audit trail for free',
-            body: 'CreatedDate, LastModifiedDate, CreatedBy and LastModifiedBy write themselves, in the clinic\u2019s time zone.',
-          },
-          {
-            title: 'Permissions, not just roles',
-            body: 'Every endpoint demands a specific permission. Own-scoped permissions resolve the owner from the token, never from the URL.',
-          },
-          {
-            title: 'Sessions that cannot be stolen quietly',
-            body: 'Single-use refresh-token families: presenting an already-consumed token condemns the whole family and forces a fresh sign-in.',
-          },
-        ],
+        ctaNote: 'The quote follows your clinics, doctors and modules.',
       },
       c2a: {
         title: 'Want to see it with your own clinic\u2019s data?',
@@ -410,8 +374,8 @@ export const resources = {
       },
       footer: {
         tagline: 'The whole practice. One system.',
-        builtWith: 'Breton Otaño · Dental clinic management system',
-        rights: 'Built for the Breton Otaño clinic.',
+        builtWith: 'N. Florentino software · Dental clinic management system',
+        rights: 'N. Florentino software · All rights reserved.',
       },
     },
   },

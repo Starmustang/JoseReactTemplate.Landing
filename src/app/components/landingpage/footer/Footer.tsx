@@ -4,8 +4,8 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
+import BrandMark from '../../shared/BrandMark';
 import LanguageToggle from '../header/LanguageToggle';
 
 const Footer = () => {
@@ -32,13 +32,7 @@ const Footer = () => {
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2.5 }}>
-            <Image
-              src="/images/logos/logo-full.png"
-              alt="Breton Otaño"
-              width={480}
-              height={342}
-              style={{ objectFit: 'contain', width: 132, height: 'auto' }}
-            />
+            <BrandMark />
             <Box>
               <Typography sx={{ fontSize: '0.875rem', fontWeight: 600, mb: 0.5 }}>
                 {t('footer.tagline')}

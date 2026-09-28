@@ -9,8 +9,9 @@ type Props = {
   webmSrc?: string;
   poster: string;
   label: string;
-  /** The hero loops silently as an animated banner; the deep-dive gets controls. */
+  /** Both films loop silently as animated banners. */
   autoPlay?: boolean;
+  /** Native controls; neither film shows them. */
   controls?: boolean;
 };
 

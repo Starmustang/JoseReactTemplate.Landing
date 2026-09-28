@@ -8,7 +8,7 @@ import OdontogramSection from '@/app/components/landingpage/odontogram/Odontogra
 import ScheduleSection from '@/app/components/landingpage/schedule/ScheduleSection';
 import WorkflowSection from '@/app/components/landingpage/workflow/WorkflowSection';
 import ModulesSection from '@/app/components/landingpage/modules/ModulesSection';
-import StackSection from '@/app/components/landingpage/stack/StackSection';
+import PricingSection from '@/app/components/landingpage/pricing/PricingSection';
 import C2a from '@/app/components/landingpage/c2a/C2a';
 import Footer from '@/app/components/landingpage/footer/Footer';
 import LanguageSync from '@/app/components/landingpage/header/LanguageSync';
@@ -25,7 +25,7 @@ export default function LandingPage() {
         <ScheduleSection />
         <WorkflowSection />
         <ModulesSection />
-        <StackSection />
+        <PricingSection />
         <C2a />
       </main>
       <Footer />

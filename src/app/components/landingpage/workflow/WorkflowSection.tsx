@@ -105,7 +105,7 @@ const WorkflowSection = () => {
               webmSrc="/videos/workflow.webm"
               poster="/videos/workflow.jpg"
               label={t('workflow.videoCaption')}
-              controls
+              autoPlay
             />
           </AnimationFadeIn>
           <Typography
