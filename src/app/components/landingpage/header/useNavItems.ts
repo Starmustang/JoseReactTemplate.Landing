@@ -8,10 +8,10 @@ export const useNavItems = (): NavItem[] => {
   const { t } = useTranslation();
 
   return [
-    { label: t('nav.product'), href: '#sistema' },
+    { label: t('nav.day'), href: '#su-dia' },
     { label: t('nav.odontogram'), href: '#odontograma' },
     { label: t('nav.schedule'), href: '#agenda' },
-    { label: t('nav.workflow'), href: '#flujo' },
+    { label: t('nav.booking'), href: '#flujo' },
     { label: t('nav.pricing'), href: '#precios' },
   ];
 };

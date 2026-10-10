@@ -1,16 +1,27 @@
-import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
+import { JetBrains_Mono, Newsreader, Source_Sans_3 } from 'next/font/google';
 
-export const plus = Plus_Jakarta_Sans({
-  weight: ['300', '400', '500', '600', '700', '800'],
+/**
+ * Headlines and the brand mark set in a warm editorial serif; Newsreader's
+ * italic carries the one emphasized headline line in the hero.
+ */
+export const serif = Newsreader({
+  style: ['normal', 'italic'],
+  axes: ['opsz'],
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['Georgia', 'Times New Roman', 'serif'],
+});
+
+/** Everything the reader scans — body copy, buttons, labels — in a humanist sans. */
+export const sans = Source_Sans_3({
   subsets: ['latin'],
   display: 'swap',
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
 });
 
 /**
- * The two walkthrough videos set their metadata lines ("ODONTOGRAMA",
- * "CONFIRMACIÓN") in JetBrains Mono, so the landing page uses it for the same
- * role: eyebrows, spec values and small labels.
+ * Kept only for product mockups where it mirrors the app's own UI — tooth
+ * numbers, calendar times, chips inside the mocks. Never marketing text.
  */
 export const mono = JetBrains_Mono({
   weight: ['400', '500'],
@@ -20,79 +31,57 @@ export const mono = JetBrains_Mono({
 });
 
 const typography: any = {
-  fontFamily: plus.style.fontFamily,
+  fontFamily: sans.style.fontFamily,
   h1: {
-    fontWeight: 700,
-    fontSize: '2.25rem',
-    lineHeight: '2.6rem',
+    fontFamily: serif.style.fontFamily,
+    fontWeight: 500,
+    fontSize: '2.5rem',
+    lineHeight: 1.08,
     letterSpacing: '-0.015em',
+    textWrap: 'balance',
+    '@media (min-width:900px)': { fontSize: '3.75rem' },
   },
   h2: {
-    fontWeight: 700,
-    fontSize: '1.875rem',
-    lineHeight: '2.2rem',
-    letterSpacing: '-0.0125em',
+    fontFamily: serif.style.fontFamily,
+    fontWeight: 500,
+    fontSize: '2rem',
+    lineHeight: 1.15,
+    letterSpacing: '-0.01em',
+    textWrap: 'balance',
+    '@media (min-width:900px)': { fontSize: '2.75rem' },
   },
   h3: {
-    fontWeight: 700,
+    fontFamily: serif.style.fontFamily,
+    fontWeight: 500,
     fontSize: '1.5rem',
-    lineHeight: '1.9rem',
-    letterSpacing: '-0.01em',
+    lineHeight: 1.25,
+    textWrap: 'balance',
   },
-  h4: {
-    fontWeight: 600,
-    fontSize: '1.3125rem',
-    lineHeight: '1.7rem',
-    letterSpacing: '-0.005em',
-  },
-  h5: {
-    fontWeight: 600,
-    fontSize: '1.125rem',
-    lineHeight: '1.55rem',
-  },
-  h6: {
-    fontWeight: 600,
-    fontSize: '1rem',
-    lineHeight: '1.4rem',
-  },
+  h4: { fontWeight: 600, fontSize: '1.3125rem', lineHeight: '1.7rem' },
+  h5: { fontWeight: 600, fontSize: '1.125rem', lineHeight: '1.55rem' },
+  h6: { fontWeight: 600, fontSize: '1rem', lineHeight: '1.4rem' },
   button: {
-    textTransform: 'none',
     fontWeight: 600,
-    letterSpacing: '0.01em',
+    textTransform: 'none',
   },
   body1: {
-    fontSize: '0.9375rem',
+    fontSize: '1.0625rem',
     fontWeight: 400,
-    lineHeight: '1.65rem',
+    lineHeight: 1.65,
   },
   body2: {
-    fontSize: '0.875rem',
-    letterSpacing: '0rem',
-    fontWeight: 400,
-    lineHeight: '1.45rem',
-  },
-  subtitle1: {
     fontSize: '0.9375rem',
-    fontWeight: 500,
-    lineHeight: '1.4rem',
-  },
-  subtitle2: {
-    fontSize: '0.8125rem',
-    fontWeight: 500,
-    lineHeight: '1.25rem',
-  },
-  caption: {
-    fontSize: '0.75rem',
     fontWeight: 400,
-    lineHeight: '1.1rem',
+    lineHeight: 1.6,
   },
+  subtitle1: { fontSize: '1rem', fontWeight: 500, lineHeight: '1.4rem' },
+  subtitle2: { fontSize: '0.875rem', fontWeight: 600, lineHeight: '1.35rem' },
+  caption: { fontSize: '0.8125rem', fontWeight: 400, lineHeight: '1.15rem' },
   overline: {
-    fontFamily: mono.style.fontFamily,
-    fontSize: '0.6875rem',
-    fontWeight: 500,
-    letterSpacing: '0.18em',
-    lineHeight: '1.2rem',
-    textTransform: 'uppercase',
+    fontSize: '0.9375rem',
+    fontWeight: 600,
+    lineHeight: 1.4,
+    textTransform: 'none',
   },
 };
 

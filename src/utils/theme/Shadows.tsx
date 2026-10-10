@@ -1,7 +1,7 @@
-// The dark shadow ramp from JoseReactTemplate.UI (`src/utils/theme/Shadows.tsx`).
-export const darkshadows: any = Array(25).fill('none');
-darkshadows[1] = '0px 1px 4px rgba(0, 0, 0, 0.24)';
-darkshadows[2] = '0px 2px 6px rgba(0, 0, 0, 0.28)';
-darkshadows[3] = '0px 4px 10px rgba(0, 0, 0, 0.30)';
-darkshadows[4] = '0px 8px 18px rgba(0, 0, 0, 0.32)';
-darkshadows[5] = '0px 12px 26px rgba(0, 0, 0, 0.34)';
+// Soft light-theme shadow ramp: low, diffuse, tinted with the ink color.
+export const lightshadows: any = Array(25).fill('none');
+lightshadows[1] = '0 1px 2px rgba(30, 42, 51, 0.06)';
+lightshadows[2] = '0 1px 2px rgba(30, 42, 51, 0.06), 0 4px 12px rgba(30, 42, 51, 0.05)';
+lightshadows[3] = '0 1px 2px rgba(30, 42, 51, 0.06), 0 8px 24px rgba(30, 42, 51, 0.06)';
+lightshadows[4] = '0 2px 4px rgba(30, 42, 51, 0.07), 0 12px 32px rgba(30, 42, 51, 0.08)';
+lightshadows[5] = '0 4px 8px rgba(30, 42, 51, 0.08), 0 16px 40px rgba(30, 42, 51, 0.10)';

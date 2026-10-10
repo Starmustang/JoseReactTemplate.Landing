@@ -5,6 +5,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
 import { IconBellRinging } from '@tabler/icons-react';
+import { useTheme } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 import SectionHeading from '../../shared/SectionHeading';
 import AnimationFadeIn from '../../shared/AnimationFadeIn';
@@ -62,6 +63,7 @@ const StepRail = ({ steps }: { steps: string[] }) => (
 
 const WorkflowSection = () => {
   const { t } = useTranslation();
+  const theme = useTheme();
   const notes = t('workflow.notes', { returnObjects: true }) as string[];
   const steps = t('workflow.steps', { returnObjects: true }) as string[];
   const reminders = t('workflow.reminders', { returnObjects: true }) as {
@@ -101,9 +103,7 @@ const WorkflowSection = () => {
         <Box sx={{ mt: { xs: 4, md: 6 } }}>
           <AnimationFadeIn>
             <VideoFrame
-              src="/videos/workflow.mp4"
-              webmSrc="/videos/workflow.webm"
-              poster="/videos/workflow.jpg"
+              name="workflow"
               label={t('workflow.videoCaption')}
               autoPlay
             />
@@ -111,13 +111,7 @@ const WorkflowSection = () => {
           <Typography
             variant="caption"
             component="p"
-            sx={{
-              mt: 2,
-              textAlign: 'center',
-              color: 'text.secondary',
-              fontFamily: 'monospace',
-              letterSpacing: '0.08em',
-            }}
+            sx={{ mt: 2, textAlign: 'center', color: 'text.secondary' }}
           >
             {t('workflow.videoCaption')}
           </Typography>
@@ -161,13 +155,13 @@ const WorkflowSection = () => {
               sx={{
                 border: '1px solid',
                 borderColor: 'divider',
-                borderRadius: 2.5,
+                borderRadius: '16px',
                 bgcolor: 'background.paper',
                 p: 2.5,
               }}
             >
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mb: 2 }}>
-                <IconBellRinging size={18} color="#3D9CB0" strokeWidth={1.7} />
+                <IconBellRinging size={18} color={theme.palette.primary.main} strokeWidth={1.7} />
                 <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
                   {t('workflow.remindersTitle')}
                 </Typography>

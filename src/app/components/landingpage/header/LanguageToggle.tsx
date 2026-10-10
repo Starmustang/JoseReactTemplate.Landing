@@ -52,7 +52,7 @@ const LanguageToggle = ({ compact = false }: { compact?: boolean }) => {
               fontSize: '0.75rem',
               fontWeight: 600,
               letterSpacing: '0.06em',
-              color: selected ? '#101B24' : 'text.secondary',
+              color: selected ? 'primary.contrastText' : 'text.secondary',
               bgcolor: selected ? 'primary.main' : 'transparent',
               transition: 'background-color 120ms ease, color 120ms ease',
               '&:hover': {

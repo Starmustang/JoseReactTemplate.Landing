@@ -5,6 +5,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
 import { IconShieldCheck } from '@tabler/icons-react';
+import { useTheme } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 import SectionHeading from '../../shared/SectionHeading';
 import AnimationFadeIn from '../../shared/AnimationFadeIn';
@@ -13,6 +14,7 @@ import ToothDetail from './ToothDetail';
 
 const OdontogramSection = () => {
   const { t } = useTranslation();
+  const theme = useTheme();
 
   return (
     <Box
@@ -52,7 +54,7 @@ const OdontogramSection = () => {
                 sx={{
                   border: '1px solid',
                   borderColor: 'divider',
-                  borderRadius: 2.5,
+                  borderRadius: '16px',
                   bgcolor: 'background.paper',
                   p: 3,
                   position: { lg: 'sticky' },
@@ -60,7 +62,7 @@ const OdontogramSection = () => {
                 }}
               >
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
-                  <IconShieldCheck size={22} color="#3D9CB0" strokeWidth={1.6} />
+                  <IconShieldCheck size={22} color={theme.palette.primary.main} strokeWidth={1.6} />
                   <Typography variant="h5" component="h3">
                     {t('odontogram.regressionTitle')}
                   </Typography>

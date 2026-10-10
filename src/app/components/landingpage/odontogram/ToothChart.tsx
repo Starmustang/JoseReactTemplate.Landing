@@ -44,7 +44,8 @@ const SURFACE_FINDINGS: Record<
   26: { [ToothSurface.Distal]: ToothStatus.Fracture },
 };
 
-const UNPAINTED = '#38465A';
+/** Healthy teeth render neutral — the chart reads as findings on a clean dentition. */
+const UNPAINTED = '#EDF1F4';
 
 /** Cross layout the app's tooth detail panel uses: V above, M/O/D across, L below. */
 const CELLS: { surface: ToothSurface; column: number; row: number }[] = [
@@ -58,6 +59,7 @@ const CELLS: { surface: ToothSurface; column: number; row: number }[] = [
 export const surfaceColor = (tooth: number, surface: ToothSurface) => {
   const status =
     SURFACE_FINDINGS[tooth]?.[surface] ?? TOOTH_HISTORY[tooth] ?? ToothStatus.Healthy;
+  if (status === ToothStatus.Healthy) return UNPAINTED;
   return TOOTH_STATUS_BY_KEY[status]?.color ?? UNPAINTED;
 };
 
@@ -120,7 +122,7 @@ const ToothChart = ({ cell = 13 }: { cell?: number }) => {
       sx={{
         border: '1px solid',
         borderColor: 'divider',
-        borderRadius: 2.5,
+        borderRadius: '16px',
         bgcolor: 'background.paper',
         overflow: 'hidden',
       }}
@@ -138,22 +140,15 @@ const ToothChart = ({ cell = 13 }: { cell?: number }) => {
           flexWrap: 'wrap',
         }}
       >
-        <Typography variant="subtitle2" sx={{ letterSpacing: '0.08em' }}>
-          {t('odontogram.chartTitle').toUpperCase()}
-        </Typography>
-        <Typography
-          sx={{
-            fontFamily: mono.style.fontFamily,
-            fontSize: '0.75rem',
-            color: 'text.secondary',
-          }}
-        >
+        <Typography variant="subtitle2">{t('odontogram.chartTitle')}</Typography>
+        <Typography sx={{ fontSize: '0.75rem', color: 'text.secondary' }}>
           {t('odontogram.chartHint')}
         </Typography>
       </Box>
 
-      <Box sx={{ overflowX: 'auto', px: 2.5, py: 3 }}>
-        <Box sx={{ minWidth: cell === 13 ? 720 : undefined, display: 'inline-block' }}>
+      <Box sx={{ position: 'relative' }}>
+        <Box sx={{ overflowX: 'auto', px: 2.5, py: 3, textAlign: 'center' }}>
+          <Box sx={{ minWidth: cell === 13 ? 720 : undefined, display: 'inline-block' }}>
           <ChartRow teeth={FDI_UPPER.slice(0, 8)} cell={cell} />
           <Box
             sx={{
@@ -177,7 +172,23 @@ const ToothChart = ({ cell = 13 }: { cell?: number }) => {
             }}
           />
           <ChartRow teeth={FDI_LOWER.slice(8)} cell={cell} />
+          </Box>
         </Box>
+        {/* Right-edge fade while the chart can scroll (xs–sm only). */}
+        <Box
+          aria-hidden
+          sx={{
+            display: { xs: 'block', md: 'none' },
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            bottom: 0,
+            width: 32,
+            background:
+              'linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1))',
+            pointerEvents: 'none',
+          }}
+        />
       </Box>
 
       <Box
@@ -207,7 +218,10 @@ const ToothChart = ({ cell = 13 }: { cell?: number }) => {
                 width: 9,
                 height: 9,
                 borderRadius: '2px',
-                bgcolor: TOOTH_STATUS_BY_KEY[status].color,
+                bgcolor:
+                  status === ToothStatus.Healthy
+                    ? UNPAINTED
+                    : TOOTH_STATUS_BY_KEY[status].color,
               }}
             />
             <Typography sx={{ fontSize: '0.75rem', color: 'text.secondary' }}>

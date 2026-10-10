@@ -3,7 +3,7 @@ import React from 'react';
 import PageContainer from '@/app/components/container/PageContainer';
 import Header from '@/app/components/landingpage/header/Header';
 import Hero from '@/app/components/landingpage/hero/Hero';
-import TwoHalves from '@/app/components/landingpage/halves/TwoHalves';
+import DaySection from '@/app/components/landingpage/day/DaySection';
 import OdontogramSection from '@/app/components/landingpage/odontogram/OdontogramSection';
 import ScheduleSection from '@/app/components/landingpage/schedule/ScheduleSection';
 import WorkflowSection from '@/app/components/landingpage/workflow/WorkflowSection';
@@ -20,7 +20,7 @@ export default function LandingPage() {
       <Header />
       <main>
         <Hero />
-        <TwoHalves />
+        <DaySection />
         <OdontogramSection />
         <ScheduleSection />
         <WorkflowSection />

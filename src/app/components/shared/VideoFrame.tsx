@@ -2,14 +2,12 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import { assetPath } from '@/utils/assetPath';
 
 type Props = {
-  /** MP4 file as written under /public; the deployment base path is applied here. */
-  src: string;
-  /** Optional VP9 sibling; browsers that decode it pick it before the MP4. */
-  webmSrc?: string;
-  poster: string;
+  /** Film name as written under /public/videos; the language suffix and the deployment base path are applied here. */
+  name: 'hero' | 'workflow' | 'modules';
   label: string;
   /** Both films loop silently as animated banners. */
   autoPlay?: boolean;
@@ -18,62 +16,44 @@ type Props = {
 };
 
 /**
- * A video in the frame both walkthrough films use for their own UI cards:
- * 1px divider border, rounded corners, flat — plus the soft accent halo the
- * compositions bloom behind their panels.
+ * A video in a plain light frame: 1px divider border, 16px radius, one soft
+ * shadow. The films themselves stay light — they read as product screens.
  *
  * The <video> only mounts once the frame nears the viewport, so neither film
  * competes with the first paint; the poster holds the frame until then.
  */
-const VideoFrame = ({
-  src,
-  webmSrc,
-  poster,
-  label,
-  autoPlay = false,
-  controls = false,
-}: Props) => {
+const VideoFrame = ({ name, label, autoPlay = false, controls = false }: Props) => {
   const [ref, inView] = useInView({ triggerOnce: true, rootMargin: '300px 0px' });
+  const { i18n } = useTranslation();
+  const lang = i18n.resolvedLanguage?.startsWith('en') ? 'en' : 'es';
 
   const mediaSx = {
     display: 'block',
     width: '100%',
     height: 'auto',
     aspectRatio: '16 / 9',
+    // The films are light product screens; keep the frame's well light too.
     bgcolor: 'background.default',
   };
 
   return (
     <Box ref={ref} sx={{ position: 'relative' }}>
       <Box
-        aria-hidden
-        sx={{
-          position: 'absolute',
-          inset: '-12% -6% -18% -6%',
-          background:
-            'radial-gradient(closest-side, rgba(61,156,176,0.22), rgba(61,156,176,0.06) 55%, transparent 78%)',
-          filter: 'blur(6px)',
-          pointerEvents: 'none',
-          zIndex: 0,
-        }}
-      />
-
-      <Box
         sx={{
           position: 'relative',
-          zIndex: 1,
           border: '1px solid',
           borderColor: 'divider',
-          borderRadius: 2.5,
+          borderRadius: '16px',
           overflow: 'hidden',
-          bgcolor: 'background.paper',
-          boxShadow: '0px 12px 26px rgba(0, 0, 0, 0.34)',
+          bgcolor: 'background.default',
+          boxShadow: '0 1px 2px rgba(30, 42, 51, 0.06), 0 8px 24px rgba(30, 42, 51, 0.08)',
         }}
       >
         {inView ? (
           <Box
+            key={lang}
             component="video"
-            poster={assetPath(poster)}
+            poster={assetPath(`/videos/${name}-${lang}.jpg`)}
             aria-label={label}
             autoPlay={autoPlay}
             controls={controls}
@@ -83,13 +63,13 @@ const VideoFrame = ({
             preload={autoPlay ? 'auto' : 'metadata'}
             sx={mediaSx}
           >
-            {webmSrc && <source src={assetPath(webmSrc)} type="video/webm" />}
-            <source src={assetPath(src)} type="video/mp4" />
+            <source src={assetPath(`/videos/${name}-${lang}.webm`)} type="video/webm" />
+            <source src={assetPath(`/videos/${name}-${lang}.mp4`)} type="video/mp4" />
           </Box>
         ) : (
           <Box
             component="img"
-            src={assetPath(poster)}
+            src={assetPath(`/videos/${name}-${lang}.jpg`)}
             alt={label}
             decoding="async"
             sx={{ ...mediaSx, objectFit: 'cover' }}

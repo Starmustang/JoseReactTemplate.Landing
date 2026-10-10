@@ -1,18 +1,13 @@
 :root {
-  --accent: #3d9cb0;
-  --surface: #26323f;
-  --canvas: #1c2733;
+  --accent: #23707f;
+  --surface: #ffffff;
+  --canvas: #faf7f2;
+  --band: #f3eee6;
 }
 
 html,
 body {
   background-color: var(--canvas);
-}
-
-/* The landing page never scrolls sideways; wide artefacts (the FDI chart) own
-   their own scroll container instead. */
-body {
-  overflow-x: hidden;
 }
 
 section {

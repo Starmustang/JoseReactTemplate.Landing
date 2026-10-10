@@ -10,7 +10,7 @@ import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
 import AppBar from '@mui/material/AppBar';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { Theme } from '@mui/material/styles';
+import { alpha, Theme } from '@mui/material/styles';
 import { IconMenu2 } from '@tabler/icons-react';
 import { useTranslation } from 'react-i18next';
 import BrandMark from '../../shared/BrandMark';
@@ -30,7 +30,7 @@ const Header = () => {
       position="sticky"
       elevation={0}
       sx={{
-        bgcolor: 'background.default',
+        bgcolor: (theme: Theme) => alpha(theme.palette.background.default, 0.85),
         borderBottom: '1px solid',
         borderColor: 'divider',
         backdropFilter: 'blur(8px)',

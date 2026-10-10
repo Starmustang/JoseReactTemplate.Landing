@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
 import { IconBolt, IconCalendarCheck } from '@tabler/icons-react';
+import { useTheme } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 import SectionHeading from '../../shared/SectionHeading';
 import AnimationFadeIn from '../../shared/AnimationFadeIn';
@@ -13,6 +14,7 @@ import WeekView from './WeekView';
 
 const ScheduleSection = () => {
   const { t } = useTranslation();
+  const theme = useTheme();
   const rules = t('schedule.rules', { returnObjects: true }) as string[];
 
   return (
@@ -30,13 +32,14 @@ const ScheduleSection = () => {
     >
       <Container maxWidth="lg">
         <Grid container spacing={{ xs: 4, md: 6 }} alignItems="flex-start">
-          <Grid size={{ xs: 12, lg: 7 }}>
+          {/* On xs the copy leads and the mock follows; side by side from lg. */}
+          <Grid size={{ xs: 12, lg: 7 }} sx={{ order: { xs: 2, lg: 1 } }}>
             <AnimationFadeIn>
               <WeekView />
             </AnimationFadeIn>
           </Grid>
 
-          <Grid size={{ xs: 12, lg: 5 }}>
+          <Grid size={{ xs: 12, lg: 5 }} sx={{ order: { xs: 1, lg: 2 } }}>
             <AnimationFadeIn delay={0.1}>
               <Box>
                 <SectionHeading
@@ -48,7 +51,7 @@ const ScheduleSection = () => {
 
                 <Box sx={{ mt: 4 }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, mb: 1.5 }}>
-                    <IconCalendarCheck size={18} color="#3D9CB0" strokeWidth={1.7} />
+                    <IconCalendarCheck size={18} color={theme.palette.primary.main} strokeWidth={1.7} />
                     <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
                       {t('schedule.rulesTitle')}
                     </Typography>
@@ -61,12 +64,11 @@ const ScheduleSection = () => {
                         label={rule}
                         size="small"
                         sx={{
-                          bgcolor: 'background.default',
+                          bgcolor: 'background.paper',
                           border: '1px solid',
                           borderColor: 'divider',
                           color: 'text.secondary',
-                          fontFamily: 'monospace',
-                          fontSize: '0.75rem',
+                          fontSize: '0.8125rem',
                         }}
                       />
                     ))}
@@ -94,7 +96,7 @@ const ScheduleSection = () => {
                     alignItems: 'flex-start',
                   }}
                 >
-                  <IconBolt size={18} color="#4BD08B" strokeWidth={1.8} style={{ flexShrink: 0, marginTop: 2 }} />
+                  <IconBolt size={18} color={theme.palette.success.main} strokeWidth={1.8} style={{ flexShrink: 0, marginTop: 2 }} />
                   <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.8125rem' }}>
                     {t('schedule.realtime')}
                   </Typography>

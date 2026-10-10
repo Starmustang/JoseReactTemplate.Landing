@@ -6,15 +6,15 @@ import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import { IconCheck } from '@tabler/icons-react';
+import { useTheme } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 import SectionHeading from '../../shared/SectionHeading';
 import AnimationFadeIn from '../../shared/AnimationFadeIn';
-
-/** Point this at the sales inbox or form once there is one. */
-const CONTACT_HREF = '';
+import { CONTACT_HREF } from '@/utils/constants/contact';
 
 const PricingSection = () => {
   const { t } = useTranslation();
+  const theme = useTheme();
   const features = t('pricing.features', { returnObjects: true }) as string[];
 
   return (
@@ -40,41 +40,33 @@ const PricingSection = () => {
               mt: { xs: 4, md: 5 },
               border: '1px solid',
               borderColor: 'divider',
-              borderRadius: 2.5,
+              borderRadius: '16px',
               bgcolor: 'background.paper',
+              boxShadow: '0 1px 2px rgba(30, 42, 51, 0.06), 0 8px 24px rgba(30, 42, 51, 0.06)',
               p: { xs: 3, md: 4 },
             }}
           >
-            <Typography variant="h6" component="h3" sx={{ fontSize: '1.0625rem' }}>
+            <Typography variant="h3" component="h3">
               {t('pricing.planTitle')}
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
               {t('pricing.planBody')}
             </Typography>
-
-            <Divider sx={{ my: 3 }} />
-
             <Typography
-              component="p"
-              sx={{
-                fontSize: { xs: '1.75rem', md: '2rem' },
-                fontWeight: 700,
-                lineHeight: 1.15,
-                color: 'primary.main',
-              }}
+              variant="caption"
+              color="text.secondary"
+              sx={{ display: 'block', mt: 1.5 }}
             >
-              {t('pricing.contactSales')}
-            </Typography>
-            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1 }}>
               {t('pricing.priceNote')}
             </Typography>
+
+            <Divider sx={{ my: 3 }} />
 
             <Box
               component="ul"
               sx={{
                 listStyle: 'none',
                 m: 0,
-                mt: 3,
                 p: 0,
                 display: 'grid',
                 gap: 1.25,
@@ -87,7 +79,7 @@ const PricingSection = () => {
                   sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.25 }}
                 >
                   <Box sx={{ display: 'flex', pt: 0.25 }}>
-                    <IconCheck size={16} color="#3D9CB0" strokeWidth={2.2} />
+                    <IconCheck size={16} color={theme.palette.primary.main} strokeWidth={2.2} />
                   </Box>
                   <Typography variant="body2" color="text.secondary">
                     {feature}
@@ -97,13 +89,13 @@ const PricingSection = () => {
             </Box>
 
             <Button
-              href={CONTACT_HREF || undefined}
+              href={CONTACT_HREF || '#recorrido'}
               variant="contained"
               color="primary"
               size="large"
               sx={{ mt: 3.5, width: '100%', px: 3 }}
             >
-              {t('pricing.contactSales')}
+              {t(CONTACT_HREF ? 'pricing.cta' : 'pricing.ctaFallback')}
             </Button>
             <Typography
               variant="caption"

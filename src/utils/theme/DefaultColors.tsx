@@ -1,70 +1,74 @@
 /**
- * Design tokens lifted from JoseReactTemplate.UI (`src/utils/theme/DefaultColors.tsx`).
- * The landing page uses the product's own dark palette so it reads as the same
- * system the two walkthrough videos were rendered in.
+ * Design tokens lifted from JoseReactTemplate.UI (`src/utils/theme/DefaultColors.tsx`
+ * `baselightTheme`), warmed for the landing page: the same teal family as the
+ * product's light mode shifted one step deeper (`#1F7AA5` -> `#23707F`), the
+ * product's status hues verbatim, and an ivory canvas instead of the app's
+ * cool grey so the page reads warm and human rather than clinical.
  */
-const baseDarkTheme = {
+const baselightTheme = {
   direction: 'ltr',
   palette: {
-    mode: 'dark',
+    mode: 'light',
     primary: {
-      main: '#3D9CB0',
-      light: '#1B3A44',
-      dark: '#2C7A8C',
+      main: '#23707F',
+      light: '#E4F0F1',
+      dark: '#1A5864',
+      contrastText: '#ffffff',
     },
     secondary: {
-      main: '#8A98A8',
-      light: '#2A3744',
-      dark: '#7A8898',
+      main: '#6B7785',
+      light: '#EEF1F4',
+      dark: '#5A6573',
     },
     success: {
-      main: '#4BD08B',
-      light: '#1B3C48',
-      dark: '#02b3a9',
+      main: '#3FAE7A',
+      light: '#E4F5EC',
+      dark: '#359A69',
       contrastText: '#ffffff',
     },
     info: {
-      main: '#5AB3D6',
-      light: '#1E3340',
-      dark: '#1682d4',
+      main: '#4A9FC4',
+      light: '#E6F2F7',
+      dark: '#3A8BAE',
       contrastText: '#ffffff',
     },
     error: {
-      main: '#E07060',
-      light: '#3D2A2A',
-      dark: '#CF604F',
+      main: '#D65A4E',
+      light: '#FBEAE8',
+      dark: '#BF4A3F',
       contrastText: '#ffffff',
     },
     warning: {
-      main: '#E8B25B',
-      light: '#3A3220',
-      dark: '#C99A47',
+      main: '#E0A24A',
+      light: '#FBF1DD',
+      dark: '#C68B3A',
       contrastText: '#ffffff',
     },
     grey: {
-      100: '#2E3B49',
-      200: '#38465A',
-      300: '#5A6B7E',
-      400: '#8A98A8',
-      500: '#C6D1DC',
-      600: '#E8EEF2',
+      100: '#F2F6F8',
+      200: '#EDF1F4',
+      300: '#DCE3E9',
+      400: '#7C8B9A',
+      500: '#5A6A7A',
+      600: '#1A2533',
     },
     text: {
-      primary: '#E8EEF2',
-      secondary: '#A6B2C0',
+      primary: '#1E2A33',
+      secondary: '#56626C',
     },
     action: {
-      disabledBackground: 'rgba(232,238,242,0.10)',
-      hoverOpacity: 0.06,
-      hover: '#2E3B49',
+      disabledBackground: 'rgba(30,42,51,0.10)',
+      hoverOpacity: 0.04,
+      hover: '#EEF1F4',
     },
-    divider: '#33414F',
+    divider: '#E7E0D5',
     background: {
-      default: '#1C2733',
-      dark: '#1C2733',
-      paper: '#26323F',
+      default: '#FAF7F2',
+      paper: '#FFFFFF',
+      /** Warm band for alternating sections. */
+      band: '#F3EEE6',
     },
   },
 };
 
-export { baseDarkTheme };
+export { baselightTheme };

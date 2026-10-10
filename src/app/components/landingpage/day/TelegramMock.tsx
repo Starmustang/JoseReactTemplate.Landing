@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
 import { IconCheck, IconSend } from '@tabler/icons-react';
+import { useTheme } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 
 const Bubble = ({
@@ -21,12 +22,13 @@ const Bubble = ({
       py: 1.25,
       borderRadius: 2,
       borderTopLeftRadius: tone === 'bot' ? 4 : 8,
-      bgcolor: 'background.default',
+      bgcolor: 'background.paper',
       border: '1px solid',
       borderColor: 'divider',
       fontSize: '0.8125rem',
       lineHeight: 1.55,
       color: 'text.primary',
+      boxShadow: '0 1px 2px rgba(30, 42, 51, 0.05)',
     }}
   >
     {children}
@@ -49,7 +51,7 @@ const KeyboardButton = ({
       border: '1px solid',
       borderColor: primary ? 'primary.main' : 'divider',
       bgcolor: primary ? 'primary.main' : 'background.paper',
-      color: primary ? '#101B24' : 'text.primary',
+      color: primary ? 'primary.contrastText' : 'text.primary',
       fontSize: '0.8125rem',
       fontWeight: primary ? 600 : 500,
       lineHeight: 1.4,
@@ -66,16 +68,18 @@ const KeyboardButton = ({
  */
 const TelegramMock = () => {
   const { t } = useTranslation();
-  const menu = t('halves.telegramMenu', { returnObjects: true }) as string[];
+  const theme = useTheme();
+  const menu = t('day.telegramMenu', { returnObjects: true }) as string[];
 
   return (
     <Box
       sx={{
         border: '1px solid',
         borderColor: 'divider',
-        borderRadius: 2.5,
+        borderRadius: '16px',
         overflow: 'hidden',
         bgcolor: 'background.paper',
+        boxShadow: '0 1px 2px rgba(30, 42, 51, 0.06), 0 8px 24px rgba(30, 42, 51, 0.06)',
       }}
     >
       <Box
@@ -115,7 +119,7 @@ const TelegramMock = () => {
             Breton Otaño · en línea
           </Typography>
         </Box>
-        <IconSend size={18} color="#A6B2C0" />
+        <IconSend size={18} color={theme.palette.text.secondary} />
       </Box>
 
       <Box
@@ -124,13 +128,13 @@ const TelegramMock = () => {
           flexDirection: 'column',
           gap: 1.25,
           p: 2,
-          bgcolor: 'background.default',
+          bgcolor: 'background.band',
         }}
       >
-        <Bubble>{t('halves.telegramWelcome')}</Bubble>
-        <KeyboardButton primary>{t('halves.telegramShare')}</KeyboardButton>
+        <Bubble>{t('day.telegramWelcome')}</Bubble>
+        <KeyboardButton primary>{t('day.telegramShare')}</KeyboardButton>
 
-        <Bubble>{t('halves.telegramBack')}</Bubble>
+        <Bubble>{t('day.telegramBack')}</Bubble>
 
         <Box
           sx={{
@@ -147,13 +151,13 @@ const TelegramMock = () => {
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, my: 0.25 }}>
           <Box sx={{ flex: 1, height: '1px', bgcolor: 'divider' }} />
           <Chip
-            label={t('halves.telegramTag')}
+            label={t('day.telegramTag')}
             size="small"
             sx={{
               height: 20,
               fontSize: '0.75rem',
               bgcolor: 'primary.light',
-              color: 'primary.main',
+              color: 'primary.dark',
               border: '1px solid',
               borderColor: 'primary.main',
             }}
@@ -163,23 +167,10 @@ const TelegramMock = () => {
 
         <Bubble>
           <Box sx={{ display: 'flex', gap: 1, alignItems: 'flex-start' }}>
-            <IconCheck size={16} color="#4BD08B" style={{ flexShrink: 0, marginTop: 2 }} />
-            <span>{t('halves.telegramConfirmed')}</span>
+            <IconCheck size={16} color={theme.palette.success.main} style={{ flexShrink: 0, marginTop: 2 }} />
+            <span>{t('day.telegramConfirmed')}</span>
           </Box>
         </Bubble>
-      </Box>
-
-      <Box
-        sx={{
-          px: 2,
-          py: 1.25,
-          borderTop: '1px solid',
-          borderColor: 'divider',
-        }}
-      >
-        <Typography sx={{ fontSize: '0.75rem', color: 'text.secondary' }}>
-          {t('halves.telegramNote')}
-        </Typography>
       </Box>
     </Box>
   );

@@ -15,7 +15,7 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        bgcolor: 'background.default',
+        bgcolor: 'background.band',
         borderTop: '1px solid',
         borderColor: 'divider',
         py: { xs: 5, md: 6 },
@@ -38,7 +38,7 @@ const Footer = () => {
                 {t('footer.tagline')}
               </Typography>
               <Typography sx={{ fontSize: '0.75rem', color: 'text.secondary' }}>
-                {t('footer.builtWith')}
+                {t('footer.madeWith')}
               </Typography>
             </Box>
           </Box>
@@ -48,29 +48,9 @@ const Footer = () => {
 
         <Divider sx={{ my: 4 }} />
 
-        <Box
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: 2,
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <Typography sx={{ fontSize: '0.75rem', color: 'text.secondary' }}>
-            {t('footer.rights')}
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: 'monospace',
-              fontSize: '0.75rem',
-              color: 'text.secondary',
-              letterSpacing: '0.06em',
-            }}
-          >
-            .NET 9 · Next.js 15 · MySQL · Telegram
-          </Typography>
-        </Box>
+        <Typography sx={{ fontSize: '0.75rem', color: 'text.secondary' }}>
+          {t('footer.rights')}
+        </Typography>
       </Container>
     </Box>
   );

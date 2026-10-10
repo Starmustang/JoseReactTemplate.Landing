@@ -78,7 +78,7 @@ const ToothDetail = () => {
       sx={{
         border: '1px solid',
         borderColor: 'divider',
-        borderRadius: 2.5,
+        borderRadius: '16px',
         bgcolor: 'background.paper',
         overflow: 'hidden',
       }}
@@ -96,9 +96,7 @@ const ToothDetail = () => {
           flexWrap: 'wrap',
         }}
       >
-        <Typography variant="subtitle2" sx={{ letterSpacing: '0.08em' }}>
-          {t('odontogram.demoTitle').toUpperCase()}
-        </Typography>
+        <Typography variant="subtitle2">{t('odontogram.demoTitle')}</Typography>
         <Typography
           sx={{
             fontFamily: mono.style.fontFamily,
@@ -158,9 +156,9 @@ const ToothDetail = () => {
                       cursor: 'pointer',
                       borderRadius: 1.25,
                       border: '1px solid',
-                      borderColor: 'divider',
-                      bgcolor: meta.color,
-                      color: '#101B24',
+                      borderColor: meta.color,
+                      bgcolor: meta.bgColor,
+                      color: meta.color,
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
@@ -194,13 +192,7 @@ const ToothDetail = () => {
           </Box>
 
           <Box sx={{ mt: 2, display: 'flex', alignItems: 'center', gap: 1 }}>
-            <Typography
-              sx={{
-                fontFamily: mono.style.fontFamily,
-                fontSize: '0.75rem',
-                color: 'text.secondary',
-              }}
-            >
+            <Typography sx={{ fontSize: '0.8125rem', color: 'text.secondary' }}>
               {t('odontogram.paintHint')}
             </Typography>
           </Box>

@@ -6,10 +6,12 @@
     <!--
       Source for public/og-image.jpg, the card WhatsApp/Slack/Facebook show when
       the landing page is shared. Regenerate it by screenshotting this file in a
-      viewport of exactly 1200x630, e.g.:
+      viewport of exactly 1200x630 with the scratch Playwright/Edge script:
 
-        npx playwright screenshot --viewport-size=1200,630 \
-          --wait-for-timeout=2000 scripts/og-image.html public/og-image.jpg
+        node E:\Trabajos\JoseReactTemplate\.scratch\pw\shot.js \
+          "file:///E:/Trabajos/JoseReactTemplate/JoseReactTemplate.Landing/scripts/og-image.html" \
+          "E:\Trabajos\JoseReactTemplate\.scratch\og.png" 1200 630
+        ffmpeg -y -i .scratch\og.png -q:v 3 public\og-image.jpg
 
       The screenshot on the right is public/videos/brag.jpg, cropped in CSS to
       the odontogram panel (source region x=800 y=210 w=1020 h=650 of 1920x1080).
@@ -17,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Source+Sans+3:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -35,30 +37,12 @@
       }
 
       body {
-        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-        background: #1c2733;
-        color: #e8eef2;
-        position: relative;
-      }
-
-      /* The same soft accent halo the walkthrough frames bloom behind their panels. */
-      .glow {
-        position: absolute;
-        top: -320px;
-        right: -220px;
-        width: 1040px;
-        height: 1040px;
-        background: radial-gradient(
-          closest-side,
-          rgba(61, 156, 176, 0.26),
-          rgba(61, 156, 176, 0.06) 58%,
-          transparent 100%
-        );
-        filter: blur(24px);
+        font-family: 'Source Sans 3', 'Helvetica', 'Arial', sans-serif;
+        background: #faf7f2;
+        color: #1e2a33;
       }
 
       .card {
-        position: relative;
         display: flex;
         align-items: center;
         gap: 52px;
@@ -73,9 +57,9 @@
 
       .brand-name {
         display: block;
-        font-size: 18px;
-        font-weight: 800;
-        letter-spacing: 0.02em;
+        font-family: 'Newsreader', 'Georgia', serif;
+        font-size: 22px;
+        font-weight: 600;
         line-height: 1.1;
       }
 
@@ -83,33 +67,32 @@
         display: block;
         margin-top: 3px;
         font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.24em;
-        text-transform: uppercase;
-        color: #a6b2c0;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        color: #56626c;
       }
 
       h1 {
-        margin-top: 30px;
-        font-size: 39px;
-        font-weight: 800;
-        line-height: 1.14;
+        margin-top: 34px;
+        font-family: 'Newsreader', 'Georgia', serif;
+        font-size: 44px;
+        font-weight: 500;
+        line-height: 1.12;
         letter-spacing: -0.015em;
       }
 
-      .rule {
-        width: 88px;
-        height: 3px;
-        margin: 26px 0 22px;
-        border-radius: 2px;
-        background: #3d9cb0;
+      h1 em {
+        font-style: italic;
+        font-weight: 500;
+        color: #1a5864;
       }
 
       .sub {
+        margin-top: 24px;
         font-size: 17px;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 1.55;
-        color: #a6b2c0;
+        color: #56626c;
       }
 
       .shot {
@@ -117,9 +100,12 @@
         width: 560px;
         height: 357px;
         overflow: hidden;
-        border: 1px solid #33414f;
-        border-radius: 14px;
-        box-shadow: 0 22px 48px rgba(0, 0, 0, 0.45);
+        border: 1px solid #e7e0d5;
+        border-radius: 16px;
+        background: #1c2733;
+        box-shadow:
+          0 1px 2px rgba(30, 42, 51, 0.06),
+          0 12px 32px rgba(30, 42, 51, 0.1);
       }
 
       /* public/videos/brag.jpg is 1920x1080; this shows its x=800 y=210 w=1020 h=650 region. */
@@ -131,16 +117,13 @@
     </style>
   </head>
   <body>
-    <div class="glow"></div>
     <div class="card">
       <div class="copy">
         <span class="brand-name">N. Florentino</span>
         <span class="brand-suffix">software</span>
-        <h1>Todo el consultorio.<br />Un solo sistema.</h1>
-        <div class="rule"></div>
+        <h1>Menos tiempo al teléfono.<br /><em>Más tiempo con sus pacientes.</em></h1>
         <p class="sub">
-          Pacientes, doctores, citas y tratamientos en un solo lugar — con un bot de Telegram que
-          agenda solo.
+          Agenda, fichas y odontograma — y sus pacientes reservan solos por Telegram.
         </p>
       </div>
       <div class="shot">

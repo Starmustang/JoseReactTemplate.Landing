@@ -35,7 +35,7 @@ const WeekView = () => (
     sx={{
       border: '1px solid',
       borderColor: 'divider',
-      borderRadius: 2.5,
+      borderRadius: '16px',
       bgcolor: 'background.paper',
       overflow: 'hidden',
     }}
@@ -53,9 +53,7 @@ const WeekView = () => (
         flexWrap: 'wrap',
       }}
     >
-      <Typography variant="subtitle2" sx={{ letterSpacing: '0.08em' }}>
-        CITAS · SEMANA
-      </Typography>
+      <Typography variant="subtitle2">Citas · semana</Typography>
       <Typography
         sx={{
           fontFamily: mono.style.fontFamily,
@@ -67,7 +65,8 @@ const WeekView = () => (
       </Typography>
     </Box>
 
-    <Box sx={{ overflowX: 'auto', p: 2 }}>
+    <Box sx={{ position: 'relative' }}>
+      <Box sx={{ overflowX: 'auto', p: 2 }}>
       <Box
         sx={{
           display: 'grid',
@@ -110,6 +109,7 @@ const WeekView = () => (
 
             {DAYS.map((day, dayIndex) => {
               const block = WEEK.find((b) => b.day === dayIndex && b.slot === slotIndex);
+              const status = block ? APPOINTMENT_STATUSES[block.status] : null;
 
               return (
                 <Box
@@ -117,11 +117,13 @@ const WeekView = () => (
                   sx={{
                     minHeight: 58,
                     borderRadius: 1,
+                    // Blocks wear a pale tint of the status hue with a
+                    // full-strength left edge — readable dark text, calm page.
                     border: '1px solid',
                     borderColor: block ? 'transparent' : 'divider',
-                    bgcolor: block
-                      ? APPOINTMENT_STATUSES[block.status].color
-                      : 'background.default',
+                    // Longhand last so the shorthand doesn't reset it.
+                    borderLeft: block ? `3px solid ${status!.color}` : undefined,
+                    bgcolor: block ? `${status!.color}24` : 'background.band',
                     p: block ? 1 : 0,
                     overflow: 'hidden',
                     display: 'flex',
@@ -135,7 +137,7 @@ const WeekView = () => (
                         sx={{
                           fontSize: '0.75rem',
                           fontWeight: 700,
-                          color: '#101B24',
+                          color: 'text.primary',
                           lineHeight: 1.25,
                           overflow: 'hidden',
                           textOverflow: 'ellipsis',
@@ -147,8 +149,7 @@ const WeekView = () => (
                       <Typography
                         sx={{
                           fontSize: '0.625rem',
-                          color: '#101B24',
-                          opacity: 0.75,
+                          color: 'text.secondary',
                           lineHeight: 1.3,
                           overflow: 'hidden',
                           textOverflow: 'ellipsis',
@@ -161,8 +162,7 @@ const WeekView = () => (
                         <Typography
                           sx={{
                             fontSize: '0.625rem',
-                            color: '#101B24',
-                            opacity: 0.7,
+                            color: 'text.secondary',
                             mt: 'auto',
                             letterSpacing: '0.02em',
                           }}
@@ -178,6 +178,22 @@ const WeekView = () => (
           </React.Fragment>
         ))}
       </Box>
+      </Box>
+      {/* Right-edge fade while the week can scroll (xs–sm only). */}
+      <Box
+        aria-hidden
+        sx={{
+          display: { xs: 'block', md: 'none' },
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          width: 32,
+          background:
+            'linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1))',
+          pointerEvents: 'none',
+        }}
+      />
     </Box>
 
     <Box

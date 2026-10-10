@@ -4,9 +4,10 @@ import MyApp from './app';
 import './globals.css';
 
 const siteUrl = 'https://starmustang.github.io/JoseReactTemplate.Landing';
-const title = 'N. Florentino software — Todo el consultorio. Un solo sistema.';
+// The Spanish copy is the canonical metadata (meta.es in locales.ts).
+const title = 'N. Florentino software — Menos teléfono, más tiempo con sus pacientes';
 const description =
-  'Sistema de gestión para clínicas dentales: pacientes, doctores, citas, tratamientos y un odontograma interactivo, con bot de Telegram para que el paciente agende solo.';
+  'Agenda, fichas de pacientes y odontograma en un solo lugar para su consultorio dental. Sus pacientes reservan, cambian o cancelan su cita por Telegram, a cualquier hora y sin llamar.';
 
 export const metadata: Metadata = {
   // Next composes this path with relative metadata URLs, so the GitHub Pages

@@ -2,7 +2,7 @@ import { Theme } from '@mui/material/styles';
 
 /**
  * Component overrides mirroring JoseReactTemplate.UI's theme so buttons, cards
- * and surfaces on the landing page behave like the product's own.
+ * and surfaces on the landing page behave like the product's own light mode.
  */
 const components: any = (theme: Theme) => ({
   MuiCssBaseline: {
@@ -13,7 +13,7 @@ const components: any = (theme: Theme) => ({
       a: { textDecoration: 'none' },
       '::selection': {
         backgroundColor: theme.palette.primary.main,
-        color: '#101B24',
+        color: '#ffffff',
       },
     },
   },
@@ -39,6 +39,7 @@ const components: any = (theme: Theme) => ({
     styleOverrides: {
       root: {
         border: `1px solid ${theme.palette.divider}`,
+        borderRadius: '16px',
         backgroundImage: 'none',
       },
     },
@@ -56,8 +57,8 @@ const components: any = (theme: Theme) => ({
   MuiTooltip: {
     styleOverrides: {
       tooltip: {
-        backgroundColor: '#101B24',
-        border: `1px solid ${theme.palette.divider}`,
+        backgroundColor: '#1E2A33',
+        color: '#ffffff',
         fontSize: '0.75rem',
         padding: '6px 10px',
       },
