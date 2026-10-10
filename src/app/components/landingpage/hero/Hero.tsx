@@ -3,10 +3,13 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid2';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useTranslation } from 'react-i18next';
 import VideoFrame from '../../shared/VideoFrame';
+import PhotoFrame from '../../shared/PhotoFrame';
+import AnimationFadeIn from '../../shared/AnimationFadeIn';
 import { serif } from '@/utils/theme/Typography';
 
 const Hero = () => {
@@ -18,56 +21,78 @@ const Hero = () => {
   return (
     <Box id="top" component="section" sx={{ pt: { xs: 6, md: 9 }, pb: { xs: 7, md: 10 } }}>
       <Container maxWidth="lg">
-        <Box sx={{ maxWidth: 860, mx: 'auto', textAlign: 'center' }}>
-          <Typography
-            variant="overline"
-            component="p"
-            sx={{ color: 'primary.main', mb: 2 }}
-          >
-            {t('hero.eyebrow')}
-          </Typography>
-
-          <Typography variant="h1" component="h1">
-            {titleLead}
-            <br />
+        <Grid container spacing={{ xs: 5, md: 6, lg: 8 }} alignItems="center">
+          <Grid size={{ xs: 12, md: 7 }}>
             <Box
-              component="span"
-              sx={{ fontStyle: 'italic', color: 'primary.dark', fontFamily: serif.style.fontFamily }}
+              sx={{
+                maxWidth: 640,
+                mx: { xs: 'auto', md: 0 },
+                textAlign: { xs: 'center', md: 'left' },
+              }}
             >
-              {titleEm}
+              <Typography
+                variant="overline"
+                component="p"
+                sx={{ color: 'primary.main', mb: 2 }}
+              >
+                {t('hero.eyebrow')}
+              </Typography>
+
+              <Typography variant="h1" component="h1">
+                {titleLead}
+                <br />
+                <Box
+                  component="span"
+                  sx={{ fontStyle: 'italic', color: 'primary.dark', fontFamily: serif.style.fontFamily }}
+                >
+                  {titleEm}
+                </Box>
+              </Typography>
+
+              <Typography
+                variant="body1"
+                color="text.secondary"
+                sx={{ mt: 3, mx: { xs: 'auto', md: 0 }, maxWidth: 560 }}
+              >
+                {t('hero.body')}
+              </Typography>
+
+              <Stack
+                direction={{ xs: 'column', sm: 'row' }}
+                spacing={1.5}
+                justifyContent={{ xs: 'center', md: 'flex-start' }}
+                sx={{ mt: 4.5 }}
+              >
+                <Button href="#recorrido" variant="contained" color="primary" size="large" sx={{ px: 3 }}>
+                  {t('hero.primary')}
+                </Button>
+                <Button href="#flujo" variant="outlined" color="primary" size="large" sx={{ px: 3 }}>
+                  {t('hero.secondary')}
+                </Button>
+              </Stack>
+
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ mt: 3, display: 'block' }}
+              >
+                {t('hero.proof')}
+              </Typography>
             </Box>
-          </Typography>
+          </Grid>
 
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            sx={{ mt: 3, mx: 'auto', maxWidth: 640 }}
-          >
-            {t('hero.body')}
-          </Typography>
-
-          <Stack
-            direction={{ xs: 'column', sm: 'row' }}
-            spacing={1.5}
-            justifyContent="center"
-            sx={{ mt: 4.5 }}
-          >
-            <Button href="#recorrido" variant="contained" color="primary" size="large" sx={{ px: 3 }}>
-              {t('hero.primary')}
-            </Button>
-            <Button href="#flujo" variant="outlined" color="primary" size="large" sx={{ px: 3 }}>
-              {t('hero.secondary')}
-            </Button>
-          </Stack>
-
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{ mt: 3, display: 'block' }}
-          >
-            {t('hero.proof')}
-          </Typography>
-        </Box>
+          <Grid size={{ xs: 12, md: 5 }}>
+            <AnimationFadeIn delay={0.1}>
+              <PhotoFrame
+                src="/images/content/dentists-xray.avif"
+                alt={t('photos.hero')}
+                aspectRatio="4 / 5"
+                objectPosition="center 30%"
+                eager
+              />
+            </AnimationFadeIn>
+          </Grid>
+        </Grid>
 
         <Box id="recorrido" sx={{ mt: { xs: 6, md: 8 }, scrollMarginTop: '96px' }}>
           <VideoFrame

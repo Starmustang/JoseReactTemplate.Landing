@@ -19,6 +19,7 @@ import { useTranslation } from 'react-i18next';
 import SectionHeading from '../../shared/SectionHeading';
 import AnimationFadeIn from '../../shared/AnimationFadeIn';
 import VideoFrame from '../../shared/VideoFrame';
+import PhotoFrame from '../../shared/PhotoFrame';
 
 const ICONS = [
   IconCalendarEvent,
@@ -52,12 +53,25 @@ const ModulesSection = () => {
       }}
     >
       <Container maxWidth="lg">
-        <SectionHeading
-          eyebrow={t('modules.eyebrow')}
-          title={t('modules.title')}
-          body={t('modules.body')}
-          maxWidth={720}
-        />
+        <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
+          <Grid size={{ xs: 12, md: 7 }}>
+            <SectionHeading
+              eyebrow={t('modules.eyebrow')}
+              title={t('modules.title')}
+              body={t('modules.body')}
+              maxWidth={720}
+            />
+          </Grid>
+          <Grid size={{ xs: 12, md: 5 }}>
+            <AnimationFadeIn delay={0.1}>
+              <PhotoFrame
+                src="/images/content/toothbrushes.avif"
+                alt={t('photos.modules')}
+                aspectRatio="4 / 3"
+              />
+            </AnimationFadeIn>
+          </Grid>
+        </Grid>
 
         <Box sx={{ mt: { xs: 4, md: 5 } }}>
           <AnimationFadeIn>

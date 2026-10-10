@@ -10,6 +10,12 @@ body {
   background-color: var(--canvas);
 }
 
+/* The scroll container framer-motion measures against. Non-static so its
+   offsets are well defined; see useScroll in the journey section. */
+html {
+  position: relative;
+}
+
 section {
   scroll-margin-top: 96px;
 }

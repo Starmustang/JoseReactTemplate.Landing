@@ -19,9 +19,16 @@ export const resources = {
         odontogram: 'Odontograma',
         schedule: 'Agenda',
         booking: 'Reservas',
+        roadmap: 'En camino',
         pricing: 'Precio',
         cta: 'Ver el recorrido',
         menu: 'Menú',
+      },
+      photos: {
+        hero: 'Dos doctores revisan junto a un paciente la radiografía de su dentadura en una pantalla del consultorio.',
+        odontogram: 'Un dentista examina los dientes de una paciente con un espejo dental.',
+        modules: 'Una persona muestra dos cepillos de dientes al frente.',
+        roadmap: 'Un dentista sostiene un modelo de dentadura para explicar un tratamiento.',
       },
       hero: {
         eyebrow: 'Para consultorios dentales',
@@ -160,6 +167,64 @@ export const resources = {
           },
         ],
       },
+      journey: {
+        eyebrow: 'El recorrido',
+        title: 'Del primer mensaje al sillón.',
+        body: 'Un paciente entra por Telegram y sale con su próxima cita agendada. Esto es lo que pasa en el medio, sin que su equipo toque el teléfono.',
+        step: 'Paso',
+        steps: [
+          {
+            label: 'Reserva',
+            title: 'El paciente reserva solo.',
+            body: 'Escribe al asistente por Telegram y elige clínica, tratamiento, doctor, fecha y hora. Solo ve las horas que de verdad están libres.',
+          },
+          {
+            label: 'Confirmación',
+            title: 'La cita entra a la agenda.',
+            body: 'Aparece como pendiente y marcada como reservada por Telegram. Su recepción la ve al momento, sin llamadas.',
+          },
+          {
+            label: 'Recordatorio',
+            title: 'El sistema le avisa.',
+            body: 'Un día antes y una hora antes, el paciente recibe su recordatorio. Menos huecos por olvido.',
+          },
+          {
+            label: 'En el sillón',
+            title: 'Su ficha, a la vista.',
+            body: 'Con el paciente sentado, abre su historial: alergias, tratamientos anteriores y el odontograma de cada diente.',
+          },
+          {
+            label: 'Tratamiento',
+            title: 'Cada diente, con su historia.',
+            body: 'Marque lo que se hizo superficie por superficie. Queda guardado, y el historial nunca da marcha atrás.',
+          },
+          {
+            label: 'Seguimiento',
+            title: 'La próxima cita, antes de irse.',
+            body: 'Agende la siguiente visita ahí mismo, con el mismo asistente que ya conoce al paciente.',
+          },
+        ],
+      },
+      roadmap: {
+        eyebrow: 'En camino',
+        title: 'Lo que sigue para su consultorio.',
+        body: 'Esto es lo que estamos construyendo ahora. Si algo de aquí le hace falta, cuéntenos — también ordena el camino.',
+        chip: 'En desarrollo',
+        items: [
+          {
+            title: 'Citas completas por WhatsApp',
+            body: 'El mismo recorrido que hoy hacen sus pacientes por Telegram — reservar, ver, reagendar y cancelar su cita — en el WhatsApp que ya usan.',
+          },
+          {
+            title: 'Planes de tratamiento',
+            body: 'Agrupe los tratamientos que un paciente necesita en un solo plan, con sus costos, para presentarlo y acordarlo en la consulta.',
+          },
+          {
+            title: 'Por etapas, visita a visita',
+            body: 'Divida cada plan en etapas y siga su avance en cada visita: qué se hizo, qué sigue y qué quedó pendiente.',
+          },
+        ],
+      },
       pricing: {
         eyebrow: 'Precio',
         title: 'Un precio a la medida de su consultorio.',
@@ -174,7 +239,7 @@ export const resources = {
           'Recordatorios automáticos antes de cada cita',
           'Sus datos en su propio servidor, con copias de seguridad diarias',
         ],
-        cta: 'Pedir una cotización',
+        cta: 'Cotizar mi clínica',
         ctaFallback: 'Ver el recorrido',
         ctaNote: 'La cotización depende de sus sedes, sus doctores y lo que necesite.',
       },
@@ -204,9 +269,16 @@ export const resources = {
         odontogram: 'Odontogram',
         schedule: 'Schedule',
         booking: 'Booking',
+        roadmap: 'On the way',
         pricing: 'Pricing',
         cta: 'Watch the walkthrough',
         menu: 'Menu',
+      },
+      photos: {
+        hero: 'Two doctors review a patient’s dental x-ray with them on a surgery screen.',
+        odontogram: 'A dentist examines a patient’s teeth with a dental mirror.',
+        modules: 'A person shows two toothbrushes to the camera.',
+        roadmap: 'A dentist holds a dental model to explain a treatment.',
       },
       hero: {
         eyebrow: 'For dental practices',
@@ -344,6 +416,64 @@ export const resources = {
           },
         ],
       },
+      journey: {
+        eyebrow: 'The journey',
+        title: 'From the first message to the chair.',
+        body: 'A patient comes in through Telegram and leaves with their next appointment booked. This is what happens in between, without your team touching the phone.',
+        step: 'Step',
+        steps: [
+          {
+            label: 'Booking',
+            title: 'The patient books on their own.',
+            body: 'They write to the assistant on Telegram and pick clinic, treatment, doctor, date and time. They only see times that are genuinely free.',
+          },
+          {
+            label: 'Confirmation',
+            title: 'The appointment lands on the schedule.',
+            body: 'It shows up as pending and marked as booked on Telegram. Your front desk sees it right away, with no calls.',
+          },
+          {
+            label: 'Reminder',
+            title: 'The system reminds them.',
+            body: 'A day before and an hour before, the patient gets their reminder. Fewer gaps from forgotten visits.',
+          },
+          {
+            label: 'In the chair',
+            title: 'Their record, in view.',
+            body: 'With the patient seated, you open their history: allergies, past treatments and the odontogram, tooth by tooth.',
+          },
+          {
+            label: 'Treatment',
+            title: 'Every tooth, with its history.',
+            body: 'Mark what was done, surface by surface. It is saved, and the history never goes backwards.',
+          },
+          {
+            label: 'Follow-up',
+            title: 'The next visit, before they leave.',
+            body: 'Book the next appointment right there, with the same assistant that already knows the patient.',
+          },
+        ],
+      },
+      roadmap: {
+        eyebrow: 'On the way',
+        title: 'What is next for your practice.',
+        body: 'This is what we are building right now. If something here would help you, tell us — it also shapes the order.',
+        chip: 'In development',
+        items: [
+          {
+            title: 'Full booking on WhatsApp',
+            body: 'The same flow your patients use on Telegram today — book, view, reschedule and cancel their appointment — on the WhatsApp they already use.',
+          },
+          {
+            title: 'Treatment plans',
+            body: 'Group the treatments a patient needs into a single plan, with costs, to present and agree in the chair.',
+          },
+          {
+            title: 'Stage by stage, visit by visit',
+            body: 'Split each plan into stages and follow its progress on every visit: what was done, what comes next and what is still pending.',
+          },
+        ],
+      },
       pricing: {
         eyebrow: 'Pricing',
         title: 'A price shaped to your practice.',
@@ -358,7 +488,7 @@ export const resources = {
           'Automatic reminders before every appointment',
           'Your data on your own server, with daily backups',
         ],
-        cta: 'Ask for a quote',
+        cta: 'Quote my clinic',
         ctaFallback: 'Watch the walkthrough',
         ctaNote: 'The quote depends on your locations, your doctors and what you need.',
       },

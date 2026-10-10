@@ -10,12 +10,22 @@ import { useTheme } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 import SectionHeading from '../../shared/SectionHeading';
 import AnimationFadeIn from '../../shared/AnimationFadeIn';
+import useCalBooking from './useCalBooking';
 import { CONTACT_HREF } from '@/utils/constants/contact';
+import { CAL_LINK } from '@/utils/constants/booking';
 
 const PricingSection = () => {
   const { t } = useTranslation();
   const theme = useTheme();
   const features = t('pricing.features', { returnObjects: true }) as string[];
+  const { openBooking, preloadBooking } = useCalBooking();
+  // With a booking link the CTA opens the calendar; otherwise it falls back to
+  // the sales contact, or to the walkthrough when there is no contact yet.
+  const canBook = Boolean(CAL_LINK);
+  const ctaProps = canBook
+    ? { onClick: openBooking, onMouseEnter: preloadBooking, onFocus: preloadBooking }
+    : { href: CONTACT_HREF || '#recorrido' };
+  const ctaLabel = canBook || CONTACT_HREF ? 'pricing.cta' : 'pricing.ctaFallback';
 
   return (
     <Box
@@ -89,13 +99,13 @@ const PricingSection = () => {
             </Box>
 
             <Button
-              href={CONTACT_HREF || '#recorrido'}
+              {...ctaProps}
               variant="contained"
               color="primary"
               size="large"
               sx={{ mt: 3.5, width: '100%', px: 3 }}
             >
-              {t(CONTACT_HREF ? 'pricing.cta' : 'pricing.ctaFallback')}
+              {t(ctaLabel)}
             </Button>
             <Typography
               variant="caption"

@@ -9,6 +9,7 @@ import { useTheme } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 import SectionHeading from '../../shared/SectionHeading';
 import AnimationFadeIn from '../../shared/AnimationFadeIn';
+import PhotoFrame from '../../shared/PhotoFrame';
 import ToothChart from './ToothChart';
 import ToothDetail from './ToothDetail';
 
@@ -23,12 +24,25 @@ const OdontogramSection = () => {
       sx={{ py: { xs: 7, md: 10 }, scrollMarginTop: '96px' }}
     >
       <Container maxWidth="lg">
-        <SectionHeading
-          eyebrow={t('odontogram.eyebrow')}
-          title={t('odontogram.title')}
-          body={t('odontogram.body')}
-          maxWidth={760}
-        />
+        <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
+          <Grid size={{ xs: 12, md: 7 }}>
+            <SectionHeading
+              eyebrow={t('odontogram.eyebrow')}
+              title={t('odontogram.title')}
+              body={t('odontogram.body')}
+              maxWidth={760}
+            />
+          </Grid>
+          <Grid size={{ xs: 12, md: 5 }}>
+            <AnimationFadeIn delay={0.1}>
+              <PhotoFrame
+                src="/images/content/clinical-exam.avif"
+                alt={t('photos.odontogram')}
+                aspectRatio="4 / 3"
+              />
+            </AnimationFadeIn>
+          </Grid>
+        </Grid>
 
         <Box sx={{ mt: { xs: 4, md: 6 } }}>
           <AnimationFadeIn>

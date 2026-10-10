@@ -7,7 +7,9 @@ import DaySection from '@/app/components/landingpage/day/DaySection';
 import OdontogramSection from '@/app/components/landingpage/odontogram/OdontogramSection';
 import ScheduleSection from '@/app/components/landingpage/schedule/ScheduleSection';
 import WorkflowSection from '@/app/components/landingpage/workflow/WorkflowSection';
+import JourneySection from '@/app/components/landingpage/journey/JourneySection';
 import ModulesSection from '@/app/components/landingpage/modules/ModulesSection';
+import RoadmapSection from '@/app/components/landingpage/roadmap/RoadmapSection';
 import PricingSection from '@/app/components/landingpage/pricing/PricingSection';
 import C2a from '@/app/components/landingpage/c2a/C2a';
 import Footer from '@/app/components/landingpage/footer/Footer';
@@ -24,7 +26,9 @@ export default function LandingPage() {
         <OdontogramSection />
         <ScheduleSection />
         <WorkflowSection />
+        <JourneySection />
         <ModulesSection />
+        <RoadmapSection />
         <PricingSection />
         <C2a />
       </main>
