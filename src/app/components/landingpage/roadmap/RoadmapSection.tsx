@@ -47,7 +47,6 @@ const RoadmapSection = () => {
         <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
           <Grid size={{ xs: 12, md: 7 }}>
             <SectionHeading
-              eyebrow={t('roadmap.eyebrow')}
               title={t('roadmap.title')}
               body={t('roadmap.body')}
               maxWidth={720}

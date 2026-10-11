@@ -154,7 +154,6 @@ const JourneySection = () => {
     >
       <Container maxWidth="lg">
         <SectionHeading
-          eyebrow={t('journey.eyebrow')}
           title={t('journey.title')}
           body={t('journey.body')}
           maxWidth={720}

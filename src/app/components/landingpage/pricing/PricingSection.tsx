@@ -35,7 +35,6 @@ const PricingSection = () => {
     >
       <Container maxWidth="lg">
         <SectionHeading
-          eyebrow={t('pricing.eyebrow')}
           title={t('pricing.title')}
           body={t('pricing.body')}
           align="center"

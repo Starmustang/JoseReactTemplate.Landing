@@ -27,7 +27,6 @@ const OdontogramSection = () => {
         <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
           <Grid size={{ xs: 12, md: 7 }}>
             <SectionHeading
-              eyebrow={t('odontogram.eyebrow')}
               title={t('odontogram.title')}
               body={t('odontogram.body')}
               maxWidth={760}

@@ -81,7 +81,6 @@ const WorkflowSection = () => {
         <Grid container spacing={4} alignItems="flex-end">
           <Grid size={{ xs: 12, lg: 8 }}>
             <SectionHeading
-              eyebrow={t('workflow.eyebrow')}
               title={t('workflow.title')}
               body={t('workflow.body')}
               maxWidth={640}

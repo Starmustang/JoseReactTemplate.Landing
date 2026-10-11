@@ -30,14 +30,6 @@ const Hero = () => {
                 textAlign: { xs: 'center', md: 'left' },
               }}
             >
-              <Typography
-                variant="overline"
-                component="p"
-                sx={{ color: 'primary.main', mb: 2 }}
-              >
-                {t('hero.eyebrow')}
-              </Typography>
-
               <Typography variant="h1" component="h1">
                 {titleLead}
                 <br />

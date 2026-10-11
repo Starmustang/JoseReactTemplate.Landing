@@ -43,7 +43,6 @@ const ScheduleSection = () => {
             <AnimationFadeIn delay={0.1}>
               <Box>
                 <SectionHeading
-                  eyebrow={t('schedule.eyebrow')}
                   title={t('schedule.title')}
                   body={t('schedule.body')}
                   maxWidth={560}

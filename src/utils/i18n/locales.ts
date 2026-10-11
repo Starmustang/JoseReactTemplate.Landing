@@ -31,7 +31,6 @@ export const resources = {
         roadmap: 'Un dentista sostiene un modelo de dentadura para explicar un tratamiento.',
       },
       hero: {
-        eyebrow: 'Para consultorios dentales',
         title: 'Menos tiempo al teléfono.\nMás tiempo con sus pacientes.',
         body: 'La agenda, las fichas de sus pacientes y el odontograma, en un solo lugar. Y mientras usted atiende, sus pacientes reservan su propia cita por Telegram — a cualquier hora, sin llamar a la recepción.',
         primary: 'Ver el recorrido',
@@ -40,7 +39,6 @@ export const resources = {
         videoCaption: 'Recorrido general · 22 segundos',
       },
       day: {
-        eyebrow: 'Un día en su consultorio',
         title: 'Pensado para cómo trabaja una clínica de verdad.',
         body: 'No es un programa más que aprender. Es el mismo día de siempre, con menos llamadas, menos papeles y menos huecos en la agenda.',
         moments: [
@@ -74,7 +72,6 @@ export const resources = {
         telegramTag: 'por Telegram',
       },
       odontogram: {
-        eyebrow: 'Odontograma',
         title: 'Cada diente, con su historia.',
         body: 'Marque caries, coronas o endodoncias superficie por superficie, con la nomenclatura FDI que ya usa. Cada tratamiento queda guardado en el historial del diente, listo para la próxima consulta.',
         chartTitle: 'Odontograma',
@@ -94,7 +91,6 @@ export const resources = {
         priorityLabel: 'Prioridad',
       },
       schedule: {
-        eyebrow: 'Agenda',
         title: 'Una agenda que no se pisa.',
         body: 'Vea la semana completa con cada cita según su estado. El sistema solo ofrece horas que realmente están libres, así que nunca hay dos pacientes a la misma hora.',
         rulesTitle: 'Antes de ofrecer una hora, revisa',
@@ -109,7 +105,6 @@ export const resources = {
         slots: 'Citas cada 30 minutos · el paciente ve las próximas dos semanas',
       },
       workflow: {
-        eyebrow: 'Reservas por Telegram',
         title: 'Su paciente reserva en seis pasos.',
         body: 'Sin llamar y sin instalar nada: su paciente ya tiene Telegram. Responde seis preguntas sencillas y solo ve los horarios que existen. Si se equivoca, vuelve un paso atrás.',
         stepsTitle: 'Los seis pasos',
@@ -128,7 +123,6 @@ export const resources = {
         ],
       },
       modules: {
-        eyebrow: 'Todo incluido',
         title: 'Lo que su consultorio necesita, en un solo sistema.',
         body: 'Su equipo aprende una pantalla y ya sabe usar las demás: todas funcionan igual.',
         videoCaption: 'Los módulos · 26 segundos',
@@ -168,7 +162,6 @@ export const resources = {
         ],
       },
       journey: {
-        eyebrow: 'El recorrido',
         title: 'Del primer mensaje al sillón.',
         body: 'Un paciente entra por Telegram y sale con su próxima cita agendada. Esto es lo que pasa en el medio, sin que su equipo toque el teléfono.',
         step: 'Paso',
@@ -206,7 +199,6 @@ export const resources = {
         ],
       },
       roadmap: {
-        eyebrow: 'En camino',
         title: 'Lo que sigue para su consultorio.',
         body: 'Esto es lo que estamos construyendo ahora. Si algo de aquí le hace falta, cuéntenos — también ordena el camino.',
         chip: 'En desarrollo',
@@ -226,7 +218,6 @@ export const resources = {
         ],
       },
       pricing: {
-        eyebrow: 'Precio',
         title: 'Un precio a la medida de su consultorio.',
         body: 'Sin planes cerrados ni cobros por usuario. Cotizamos según sus sedes, sus doctores y lo que necesite.',
         planTitle: 'El sistema completo',
@@ -281,7 +272,6 @@ export const resources = {
         roadmap: 'A dentist holds a dental model to explain a treatment.',
       },
       hero: {
-        eyebrow: 'For dental practices',
         title: 'Less time on the phone.\nMore time with your patients.',
         body: 'Your schedule, your patient records and the odontogram, in one place. And while you treat patients, others book their own appointment on Telegram — at any hour, without calling the front desk.',
         primary: 'Watch the walkthrough',
@@ -290,7 +280,6 @@ export const resources = {
         videoCaption: 'Overall walkthrough · 22 seconds',
       },
       day: {
-        eyebrow: 'A day in your practice',
         title: 'Built around how a real clinic works.',
         body: 'Not another program to learn. The same day you already have — with fewer calls, less paperwork and fewer gaps in the schedule.',
         moments: [
@@ -324,7 +313,6 @@ export const resources = {
         telegramTag: 'via Telegram',
       },
       odontogram: {
-        eyebrow: 'Odontogram',
         title: 'Every tooth, with its history.',
         body: 'Mark caries, crowns or root canals surface by surface, in the FDI notation you already use. Every treatment is kept in the tooth\u2019s history, ready for the next visit.',
         chartTitle: 'Odontogram',
@@ -343,7 +331,6 @@ export const resources = {
         priorityLabel: 'Priority',
       },
       schedule: {
-        eyebrow: 'Schedule',
         title: 'A schedule that never double-books.',
         body: 'See the whole week with every appointment by status. The system only offers times that are genuinely free, so two patients never end up in the same slot.',
         rulesTitle: 'Before offering a time, it checks',
@@ -358,7 +345,6 @@ export const resources = {
         slots: '30-minute appointments · patients see the next two weeks',
       },
       workflow: {
-        eyebrow: 'Booking on Telegram',
         title: 'Your patient books in six steps.',
         body: 'No calls and nothing to install: your patients already have Telegram. They answer six simple questions and only see times that exist. If they make a mistake, they go back a step.',
         stepsTitle: 'The six steps',
@@ -377,7 +363,6 @@ export const resources = {
         ],
       },
       modules: {
-        eyebrow: 'Everything included',
         title: 'What your practice needs, in one system.',
         body: 'Your team learns one screen and already knows the rest: they all work the same way.',
         videoCaption: 'The modules · 26 seconds',
@@ -417,7 +402,6 @@ export const resources = {
         ],
       },
       journey: {
-        eyebrow: 'The journey',
         title: 'From the first message to the chair.',
         body: 'A patient comes in through Telegram and leaves with their next appointment booked. This is what happens in between, without your team touching the phone.',
         step: 'Step',
@@ -455,7 +439,6 @@ export const resources = {
         ],
       },
       roadmap: {
-        eyebrow: 'On the way',
         title: 'What is next for your practice.',
         body: 'This is what we are building right now. If something here would help you, tell us — it also shapes the order.',
         chip: 'In development',
@@ -475,7 +458,6 @@ export const resources = {
         ],
       },
       pricing: {
-        eyebrow: 'Pricing',
         title: 'A price shaped to your practice.',
         body: 'No fixed tiers and no per-user fees. We quote based on your locations, your doctors and what you need.',
         planTitle: 'The complete system',

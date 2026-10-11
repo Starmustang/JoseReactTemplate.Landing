@@ -40,7 +40,6 @@ const DaySection = () => {
             <AnimationFadeIn>
               <Box>
                 <SectionHeading
-                  eyebrow={t('day.eyebrow')}
                   title={t('day.title')}
                   body={t('day.body')}
                   maxWidth={560}

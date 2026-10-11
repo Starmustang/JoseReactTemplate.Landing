@@ -56,7 +56,6 @@ const ModulesSection = () => {
         <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
           <Grid size={{ xs: 12, md: 7 }}>
             <SectionHeading
-              eyebrow={t('modules.eyebrow')}
               title={t('modules.title')}
               body={t('modules.body')}
               maxWidth={720}
